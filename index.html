@@ -1,0 +1,1952 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seka Synergy | Leading the Bio Energy Revolution — PT Seka Sinergi Nusantara</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            bg: '#F5F5F0',          // Editorial warm off-white
+                            cardBg: '#EAEAE4',      // Muted stone/beige container
+                            dark: '#111111',        // Deep charcoal primary text & active pills
+                            darkHover: '#262626',
+                            green: '#1B4332',       // Forest green industrial accent
+                            lightGreen: '#2D6A4F',
+                            wood: '#8B5A2B',        // Natural timber accent
+                            accent: '#D4A373',      // Warm sand/wood highlight
+                            orange: '#FF5733'       // High-visibility CTA accent
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                    borderRadius: {
+                        '4xl': '2rem',
+                        '5xl': '2.5rem'
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F5F5F0;
+            color: #111111;
+            overflow-x: hidden;
+        }
+        /* Active Pill Styling */
+        .nav-pill-active {
+            background-color: #111111 !important;
+            color: #FFFFFF !important;
+            box-shadow: 0 4px 12px rgba(17, 17, 17, 0.15);
+        }
+        /* Multi-Page View Transitions */
+        .page-view {
+            display: none;
+            opacity: 0;
+            transform: translateY(8px);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+        .page-view.active {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+        /* Custom Range Slider */
+        input[type=range]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #1B4332;
+            cursor: pointer;
+            border: 3px solid #FFFFFF;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+        }
+        input[type=range]::-moz-range-thumb {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #1B4332;
+            cursor: pointer;
+            border: 3px solid #FFFFFF;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+        }
+        /* Responsive Isometric Canvas Container */
+        #stuffingCanvasWrapper {
+            position: relative;
+            width: 100%;
+            height: 360px;
+        }
+        @media (min-width: 640px) {
+            #stuffingCanvasWrapper {
+                height: 430px;
+            }
+        }
+        #stuffingCanvas {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-brand-green selection:text-white min-h-screen flex flex-col justify-between">
+
+    <!-- STICKY HEADER & PILL NAVIGATION -->
+    <header class="sticky top-0 z-50 bg-[#F5F5F0]/95 backdrop-blur-md border-b border-black/5">
+        
+        <!-- Micro Utility Bar -->
+        <div class="bg-[#EAEAE4] text-xs font-medium text-slate-600 border-b border-black/5 py-1.5">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-wrap justify-between items-center gap-2">
+                <div class="hidden sm:flex items-center gap-2 text-slate-500">
+                    <span class="font-semibold text-brand-dark">PT Seka Sinergi Nusantara</span>
+                    <span>•</span>
+                    <span>Indonesian Biomass Manufacturer & Global Exporter</span>
+                </div>
+                <div class="flex items-center gap-4 sm:gap-6 ml-auto">
+                    <button onclick="navigateTo('logistics'); setTimeout(() => scrollToSimulator(), 100)" class="hover:text-brand-green transition-colors font-semibold text-brand-wood flex items-center gap-1.5">
+                        <i class="fa-solid fa-cube"></i>
+                        <span>3D Stuffing Simulator</span>
+                    </button>
+                    <button onclick="openPdfModal()" class="hover:text-black transition-colors font-semibold text-brand-dark flex items-center gap-1.5">
+                        <i class="fa-solid fa-file-pdf text-red-600"></i>
+                        <span>Spec Sheet (PDF)</span>
+                    </button>
+                    <span class="hidden md:inline text-slate-300">|</span>
+                    <span class="hidden md:inline-flex items-center text-brand-green font-semibold">
+                        <span class="w-2 h-2 rounded-full bg-emerald-600 mr-1.5 animate-pulse"></span>
+                        15,000 MT/Mo Export Ready
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Primary Navigation Container -->
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3.5 flex items-center justify-between gap-4">
+            
+            <!-- Brand Identity -->
+            <a href="#home" onclick="navigateTo('home'); return false;" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-full bg-brand-green group-hover:bg-brand-dark transition-colors flex items-center justify-center text-white text-lg shadow-sm">
+                    <i class="fa-solid fa-seedling"></i>
+                </div>
+                <div>
+                    <div class="flex items-baseline gap-1.5">
+                        <span class="text-xl font-black tracking-tight text-brand-dark leading-none">Seka Synergy</span>
+                    </div>
+                    <span class="text-[10px] text-brand-wood font-bold uppercase tracking-widest block mt-0.5">PT Seka Sinergi Nusantara</span>
+                </div>
+            </a>
+
+            <!-- Desktop Pill Navigation -->
+            <nav aria-label="Main Navigation" class="hidden lg:flex items-center bg-[#EAEAE4] p-1.5 rounded-full border border-black/5 text-sm font-medium gap-1">
+                <button onclick="navigateTo('home')" id="nav-home" class="px-5 py-2 rounded-full text-slate-700 hover:text-black transition-all nav-pill-active">Home</button>
+                <button onclick="navigateTo('products')" id="nav-products" class="px-5 py-2 rounded-full text-slate-700 hover:text-black transition-all">Products & Specs</button>
+                <button onclick="navigateTo('production')" id="nav-production" class="px-5 py-2 rounded-full text-slate-700 hover:text-black transition-all">Production & Capacity</button>
+                <button onclick="navigateTo('logistics')" id="nav-logistics" class="px-5 py-2 rounded-full text-slate-700 hover:text-black transition-all">Export & Logistics</button>
+            </nav>
+
+            <!-- Primary Action & Mobile Toggle -->
+            <div class="flex items-center gap-2.5">
+                <button onclick="navigateTo('quote')" id="nav-quote" class="hidden sm:inline-flex px-5 py-2.5 rounded-full bg-brand-orange hover:bg-orange-600 text-white font-semibold text-sm transition-all shadow-md shadow-orange-500/15 items-center gap-2">
+                    <span>Request a Quote</span>
+                    <i class="fa-solid fa-arrow-right text-xs"></i>
+                </button>
+
+                <!-- Mobile Menu Hamburger -->
+                <button id="mobileMenuBtn" aria-label="Toggle Menu" class="lg:hidden w-10 h-10 rounded-full bg-[#EAEAE4] hover:bg-black/10 flex items-center justify-center text-brand-dark transition-colors">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Drawer -->
+        <div id="mobileMenu" class="hidden lg:hidden bg-[#EAEAE4] border-b border-black/10 px-4 py-4 space-y-2 shadow-inner">
+            <button onclick="navigateTo('home'); toggleMobileMenu()" class="block w-full text-left py-2.5 px-4 rounded-full text-slate-800 font-semibold hover:bg-white/60 transition-colors">Home</button>
+            <button onclick="navigateTo('products'); toggleMobileMenu()" class="block w-full text-left py-2.5 px-4 rounded-full text-slate-800 font-semibold hover:bg-white/60 transition-colors">Products & Specs</button>
+            <button onclick="navigateTo('production'); toggleMobileMenu()" class="block w-full text-left py-2.5 px-4 rounded-full text-slate-800 font-semibold hover:bg-white/60 transition-colors">Production & Capacity</button>
+            <button onclick="navigateTo('logistics'); toggleMobileMenu()" class="block w-full text-left py-2.5 px-4 rounded-full text-slate-800 font-semibold hover:bg-white/60 transition-colors">Export & Logistics (3D Stuffing)</button>
+            <div class="pt-2 border-t border-black/5 flex flex-col gap-2">
+                <button onclick="openPdfModal(); toggleMobileMenu()" class="w-full py-2.5 px-4 rounded-full bg-white text-brand-dark font-bold text-sm text-center border border-black/10">
+                    <i class="fa-solid fa-file-pdf text-red-600 mr-1.5"></i> Download Spec Sheet
+                </button>
+                <button onclick="navigateTo('quote'); toggleMobileMenu()" class="w-full py-3 px-4 rounded-full bg-brand-orange text-white font-bold text-sm text-center shadow-sm">
+                    Request a Quote
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN SPA CONTENT AREA -->
+    <main class="flex-grow">
+        
+        <!-- =====================================================================
+             VIEW 1: HOME PAGE
+             ===================================================================== -->
+        <section id="view-home" class="page-view active">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-16">
+                
+                <!-- Editorial Hero Split Header -->
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end mb-12">
+                    <div class="lg:col-span-8">
+                        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#EAEAE4] text-brand-green text-xs font-bold uppercase tracking-wider mb-5">
+                            <i class="fa-solid fa-leaf"></i>
+                            <span>Sustainable Indonesian Wood Pellets</span>
+                        </div>
+                        <h1 class="text-4xl sm:text-6xl lg:text-[4.25rem] font-black text-brand-dark tracking-tight leading-[1.04]">
+                            Leading the Bio Energy Revolution.
+                        </h1>
+                    </div>
+                    <div class="lg:col-span-4 space-y-5">
+                        <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+                            Seka Synergy delivers high-calorific, low-ash wood pellets engineered from 100% legal Indonesian plantation and sawmill residues—empowering industrial boilers and biomass power plants across Asia and Europe.
+                        </p>
+                        <div class="flex flex-wrap items-center gap-3">
+                            <button onclick="navigateTo('quote')" class="px-6 py-3.5 rounded-full bg-brand-dark text-white font-semibold text-sm hover:bg-brand-green transition-all flex items-center gap-2 shadow-sm">
+                                <span>Request a Quote</span>
+                                <i class="fa-solid fa-arrow-right text-xs"></i>
+                            </button>
+                            <button onclick="openPdfModal()" class="px-5 py-3.5 rounded-full bg-[#EAEAE4] hover:bg-black/10 text-brand-dark font-semibold text-sm transition-all flex items-center gap-2">
+                                <i class="fa-solid fa-download text-xs"></i>
+                                <span>Download Spec Sheet</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Visual Feature Card -->
+                <div class="relative rounded-[2rem] sm:rounded-[2.5rem] overflow-hidden bg-brand-green text-white min-h-[420px] sm:min-h-[500px] flex flex-col justify-between p-6 sm:p-12 shadow-xl">
+                    <!-- Gradient & Background Visual -->
+                    <div class="absolute inset-0 bg-gradient-to-tr from-[#0d241a]/95 via-[#1B4332]/80 to-black/35 z-10"></div>
+                    <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=1600&q=80" 
+                         onerror="this.src='https://placehold.co/1600x800/1B4332/FFFFFF?text=Seka+Synergy+Sustainable+Forestry'" 
+                         alt="Sustainable Indonesian Biomass Forestry" 
+                         class="absolute inset-0 w-full h-full object-cover object-center opacity-75">
+
+                    <!-- Top Pills Overlay -->
+                    <div class="relative z-20 flex flex-wrap justify-between items-center gap-3">
+                        <span class="px-4 py-1.5 rounded-full bg-white/15 backdrop-blur-md text-white text-xs font-semibold uppercase tracking-wider border border-white/20">
+                            PT Seka Sinergi Nusantara
+                        </span>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3.5 py-1.5 rounded-full bg-black/40 backdrop-blur-md text-xs font-semibold text-emerald-300 border border-emerald-400/30">
+                                <i class="fa-solid fa-shield-check mr-1"></i> SVLK Legal Wood
+                            </span>
+                            <span class="px-3.5 py-1.5 rounded-full bg-black/40 backdrop-blur-md text-xs font-semibold text-white border border-white/20">
+                                FSC® Chain of Custody
+                            </span>
+                            <span class="px-3.5 py-1.5 rounded-full bg-black/40 backdrop-blur-md text-xs font-semibold text-brand-accent border border-brand-accent/30">
+                                ISO 17225-2 / ENplus
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Bottom Split Overlay -->
+                    <div class="relative z-20 grid grid-cols-1 lg:grid-cols-12 gap-6 items-end pt-14">
+                        <div class="lg:col-span-7 space-y-3">
+                            <h2 class="text-2xl sm:text-4xl font-extrabold text-white tracking-tight leading-tight">
+                                Industrial-Scale Biomass Supply for Global Decarbonization
+                            </h2>
+                            <p class="text-slate-200 text-sm sm:text-base max-w-xl leading-relaxed">
+                                Consistent thermal output (&gt; 4,650 kcal/kg), ultra-low moisture (&lt; 8%), and reliable FOB/CIF vessel & container shipments from Indonesia's primary export ports.
+                            </p>
+                            <!-- Key Export Metrics Row -->
+                            <div class="pt-3 flex flex-wrap gap-6 text-white">
+                                <div>
+                                    <span class="text-2xl sm:text-3xl font-black text-brand-accent block">15,000 MT</span>
+                                    <span class="text-xs text-slate-300 uppercase tracking-wider">Monthly Capacity</span>
+                                </div>
+                                <div class="border-l border-white/20 pl-6">
+                                    <span class="text-2xl sm:text-3xl font-black text-emerald-300 block">4,750 kcal/kg</span>
+                                    <span class="text-xs text-slate-300 uppercase tracking-wider">Net Calorific Value</span>
+                                </div>
+                                <div class="border-l border-white/20 pl-6">
+                                    <span class="text-2xl sm:text-3xl font-black text-white block">&lt; 0.85%</span>
+                                    <span class="text-xs text-slate-300 uppercase tracking-wider">Low Ash Content</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Editorial Floating Card with Direct 3D Simulator Launch -->
+                        <div class="lg:col-span-5 bg-[#F5F5F0]/95 backdrop-blur-md text-brand-dark p-6 rounded-[1.75rem] border border-white/50 shadow-2xl space-y-3">
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center gap-2.5">
+                                    <div class="w-9 h-9 rounded-full bg-brand-wood text-white flex items-center justify-center text-sm">
+                                        <i class="fa-solid fa-cubes"></i>
+                                    </div>
+                                    <div>
+                                        <span class="font-bold text-sm block leading-none">Interactive 3D Stuffing</span>
+                                        <span class="text-[11px] text-slate-500">20ft & 40ft HC Container Load Plan</span>
+                                    </div>
+                                </div>
+                                <span class="px-2.5 py-1 rounded-full bg-emerald-100 text-brand-green text-[11px] font-bold">Live 3D</span>
+                            </div>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                Visualize how 1-Ton Jumbo Bags (FIBC), palletized 15kg bags, or loose bulk wood pellets are loaded and secured inside export containers at our Indonesian mills.
+                            </p>
+                            <div class="pt-2.5 border-t border-black/10 flex justify-between items-center text-xs font-bold">
+                                <button onclick="navigateTo('logistics'); setTimeout(() => scrollToSimulator(), 100)" class="px-4 py-2 rounded-full bg-brand-dark text-white hover:bg-brand-green transition-colors">
+                                    Launch 3D Simulator &rarr;
+                                </button>
+                                <button onclick="navigateTo('products')" class="text-brand-wood hover:underline">Specs Table &rarr;</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3-Card Editorial Grid (Clean Energy Transition) -->
+                <div class="mt-16 sm:mt-20">
+                    <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-8 gap-4">
+                        <div class="max-w-2xl">
+                            <span class="text-xs font-bold uppercase tracking-widest text-brand-wood">Why Seka Synergy</span>
+                            <h2 class="text-2xl sm:text-4xl font-black text-brand-dark mt-1 tracking-tight">
+                                Clean energy transition backed by traceable forestry.
+                            </h2>
+                        </div>
+                        <button onclick="navigateTo('production')" class="px-5 py-2.5 rounded-full bg-[#EAEAE4] hover:bg-brand-dark hover:text-white transition-all text-xs font-bold">
+                            Inspect Production & QC &rarr;
+                        </button>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <!-- Card 1: Organic Material -->
+                        <div onclick="navigateTo('production')" class="cursor-pointer bg-brand-cardBg rounded-[2rem] p-7 flex flex-col justify-between h-80 relative overflow-hidden group hover:shadow-xl transition-all border border-black/5">
+                            <img src="https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?auto=format&fit=crop&w=800&q=80" 
+                                 onerror="this.src='https://placehold.co/800x600/EAEAE4/1B4332?text=Organic+Wood+Fiber'" 
+                                 class="absolute inset-0 w-full h-full object-cover opacity-20 group-hover:scale-105 transition-transform duration-500" 
+                                 alt="Organic Material">
+                            <div class="relative z-10 flex justify-between items-center">
+                                <span class="text-xs font-bold uppercase tracking-wider text-brand-green bg-white/85 backdrop-blur-sm px-3.5 py-1.5 rounded-full">01 / Organic Material</span>
+                                <span class="w-8 h-8 rounded-full bg-white/80 flex items-center justify-center text-brand-dark group-hover:bg-brand-dark group-hover:text-white transition-colors">
+                                    <i class="fa-solid fa-arrow-up-right text-xs"></i>
+                                </span>
+                            </div>
+                            <div class="relative z-10">
+                                <h3 class="text-xl font-extrabold text-brand-dark">100% Legal Sawmill & Plantation Fiber</h3>
+                                <p class="text-xs text-slate-700 mt-2 leading-relaxed">
+                                    Upcycled from sustainable Acacia, Rubberwood, and Sengon residues with zero primary forest deforestation and full SVLK traceability.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Card 2: Bioenergy Standards -->
+                        <div onclick="navigateTo('products')" class="cursor-pointer bg-brand-cardBg rounded-[2rem] p-7 flex flex-col justify-between h-80 relative overflow-hidden group hover:shadow-xl transition-all border border-black/5">
+                            <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80" 
+                                 onerror="this.src='https://placehold.co/800x600/EAEAE4/8B5A2B?text=Bioenergy+Standards'" 
+                                 class="absolute inset-0 w-full h-full object-cover opacity-20 group-hover:scale-105 transition-transform duration-500" 
+                                 alt="Bioenergy Standards">
+                            <div class="relative z-10 flex justify-between items-center">
+                                <span class="text-xs font-bold uppercase tracking-wider text-brand-wood bg-white/85 backdrop-blur-sm px-3.5 py-1.5 rounded-full">02 / Bioenergy Standards</span>
+                                <span class="w-8 h-8 rounded-full bg-white/80 flex items-center justify-center text-brand-dark group-hover:bg-brand-dark group-hover:text-white transition-colors">
+                                    <i class="fa-solid fa-arrow-up-right text-xs"></i>
+                                </span>
+                            </div>
+                            <div class="relative z-10">
+                                <h3 class="text-xl font-extrabold text-brand-dark">Precision Calorific & Low-Ash Engineering</h3>
+                                <p class="text-xs text-slate-700 mt-2 leading-relaxed">
+                                    High mechanical durability (&ge; 98%) and low ash content prevent boiler slagging, meeting strict ENplus A1 and ISO 17225-2 benchmarks.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Card 3: Global Energy Security (Dark Editorial Contrast Card) -->
+                        <div onclick="navigateTo('logistics')" class="cursor-pointer bg-brand-dark text-white rounded-[2rem] p-7 flex flex-col justify-between h-80 relative overflow-hidden group hover:shadow-xl transition-all">
+                            <div class="flex justify-between items-center">
+                                <span class="text-xs font-bold uppercase tracking-wider text-emerald-400 bg-white/10 px-3.5 py-1.5 rounded-full">03 / Container & Bulk Logistics</span>
+                                <span class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-white group-hover:bg-brand-orange transition-colors">
+                                    <i class="fa-solid fa-arrow-up-right text-xs"></i>
+                                </span>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-extrabold text-white leading-snug">
+                                    Animated 3D Stuffing & Resilient FOB/CIF Supply
+                                </h3>
+                                <p class="text-xs text-slate-400 mt-2.5 leading-relaxed">
+                                    Test our live 3D container loading simulator and review departure ports across Java and Sumatra.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Factory & Warehouse Operations Preview Strip -->
+                <div class="mt-16 bg-white rounded-[2rem] p-6 sm:p-8 border border-black/5 shadow-sm">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-6">
+                        <div>
+                            <span class="text-xs font-bold uppercase tracking-wider text-brand-green">On-Site Verification</span>
+                            <h3 class="text-xl sm:text-2xl font-black text-brand-dark mt-0.5">Indonesian Mill & Export Warehouse Operations</h3>
+                        </div>
+                        <button onclick="navigateTo('production')" class="text-xs font-bold text-brand-wood hover:underline">View Full Facility Profile &rarr;</button>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-5">
+                        <div class="rounded-2xl overflow-hidden bg-[#F5F5F0] border border-black/5">
+                            <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80" 
+                                 onerror="this.src='https://placehold.co/800x500/EAEAE4/1B4332?text=Covered+Jumbo+Bag+Warehouse'" 
+                                 alt="Covered Warehouse Storage with 1-Ton Jumbo Bags" 
+                                 class="w-full h-44 object-cover">
+                            <div class="p-4">
+                                <span class="text-[11px] font-bold text-brand-green uppercase">Covered Buffer Storage</span>
+                                <h4 class="font-extrabold text-sm text-brand-dark mt-0.5">25,000 MT Dry Warehouse</h4>
+                                <p class="text-xs text-slate-600 mt-1">Moisture-shielded FIBC jumbo bags stacked for immediate container stuffing.</p>
+                            </div>
+                        </div>
+                        <div class="rounded-2xl overflow-hidden bg-[#F5F5F0] border border-black/5">
+                            <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=800&q=80" 
+                                 onerror="this.src='https://placehold.co/800x500/EAEAE4/8B5A2B?text=Automated+Pelletizing+Mill'" 
+                                 alt="Industrial Wood Pellet Production Line" 
+                                 class="w-full h-44 object-cover">
+                            <div class="p-4">
+                                <span class="text-[11px] font-bold text-brand-wood uppercase">Industrial Processing</span>
+                                <h4 class="font-extrabold text-sm text-brand-dark mt-0.5">High-Capacity Ring-Die Lines</h4>
+                                <p class="text-xs text-slate-600 mt-1">Rotary drum drying and automated cyclone dust extraction for uniform density.</p>
+                            </div>
+                        </div>
+                        <div class="rounded-2xl overflow-hidden bg-[#F5F5F0] border border-black/5">
+                            <img src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=800&q=80" 
+                                 onerror="this.src='https://placehold.co/800x500/EAEAE4/111111?text=Container+Stuffing+Bay'" 
+                                 alt="Export Container Stuffing Bay" 
+                                 class="w-full h-44 object-cover">
+                            <div class="p-4">
+                                <span class="text-[11px] font-bold text-brand-dark uppercase">Export Dispatch</span>
+                                <h4 class="font-extrabold text-sm text-brand-dark mt-0.5">Direct Factory Stuffing</h4>
+                                <p class="text-xs text-slate-600 mt-1">Forklift & conveyor loading into 20ft and 40ft High Cube containers with SGS inspection.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- =====================================================================
+             VIEW 2: PRODUCTS & TECHNICAL SPECIFICATIONS
+             ===================================================================== -->
+        <section id="view-products" class="page-view">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+                
+                <!-- Header -->
+                <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-10">
+                    <div class="max-w-2xl">
+                        <span class="text-xs font-bold uppercase tracking-widest text-brand-green bg-brand-green/10 px-3.5 py-1.5 rounded-full">Laboratory Verified Quality</span>
+                        <h1 class="text-3xl sm:text-5xl font-black text-brand-dark mt-3 tracking-tight">Product Specifications</h1>
+                        <p class="text-slate-600 mt-3 text-sm sm:text-base leading-relaxed">
+                            Manufactured without chemical binders using pure tropical hardwood and plantation softwood fibers. Every shipment is verified by independent SGS or Sucofindo laboratory analysis.
+                        </p>
+                    </div>
+                    <div>
+                        <button onclick="openPdfModal()" class="px-6 py-3.5 rounded-full bg-brand-dark hover:bg-brand-green text-white font-bold text-sm transition-all flex items-center gap-2.5 shadow-md">
+                            <i class="fa-solid fa-file-pdf text-red-400 text-base"></i>
+                            <span>Download Official Spec Sheet (PDF)</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Grade Toggle Pills & Certification Badges -->
+                <div class="flex flex-wrap items-center justify-between gap-4 mb-6">
+                    <div class="inline-flex bg-[#EAEAE4] p-1.5 rounded-full border border-black/5">
+                        <button id="tabGradeA1" onclick="switchSpecTab('A1')" class="px-5 sm:px-6 py-2.5 rounded-full bg-brand-dark text-white font-bold text-xs sm:text-sm transition-all">
+                            Premium Grade A1 (ENplus / ISO)
+                        </button>
+                        <button id="tabGradeIndustrial" onclick="switchSpecTab('Industrial')" class="px-5 sm:px-6 py-2.5 rounded-full text-slate-700 hover:text-black font-bold text-xs sm:text-sm transition-all">
+                            Industrial Utility Grade
+                        </button>
+                    </div>
+
+                    <div class="flex flex-wrap gap-2 text-xs font-bold">
+                        <span class="px-3.5 py-1.5 rounded-full bg-white border border-black/10 text-brand-green"><i class="fa-solid fa-certificate mr-1"></i> SVLK Certified</span>
+                        <span class="px-3.5 py-1.5 rounded-full bg-white border border-black/10 text-brand-wood"><i class="fa-solid fa-tree mr-1"></i> FSC® 100% / Mix</span>
+                        <span class="px-3.5 py-1.5 rounded-full bg-white border border-black/10 text-brand-dark"><i class="fa-solid fa-flask mr-1"></i> ISO 17225-2</span>
+                    </div>
+                </div>
+
+                <!-- Technical Specification Table -->
+                <div class="bg-white rounded-[2rem] p-6 sm:p-8 shadow-sm border border-black/5 mb-12">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-5 mb-5 border-b border-slate-100 gap-2">
+                        <div>
+                            <h2 id="specTableTitle" class="text-lg font-extrabold text-brand-dark">Premium Grade A1 Wood Pellets</h2>
+                            <p id="specTableSubtitle" class="text-xs text-slate-500">Ideal for high-efficiency industrial boilers, commercial heating, and strict European/Japanese emission standards.</p>
+                        </div>
+                        <span class="text-xs font-mono bg-slate-100 text-slate-600 px-3 py-1 rounded-full w-max">Basis: As Received (AR)</span>
+                    </div>
+
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left border-collapse">
+                            <thead>
+                                <tr class="border-b border-slate-200 text-[11px] font-bold text-slate-400 uppercase tracking-wider">
+                                    <th class="pb-3.5 pr-4">Technical Parameter</th>
+                                    <th class="pb-3.5 px-4">Testing Method</th>
+                                    <th class="pb-3.5 px-4">Guaranteed Value</th>
+                                    <th class="pb-3.5 pl-4 text-right">Rejection Limit</th>
+                                </tr>
+                            </thead>
+                            <tbody id="specTableBody" class="divide-y divide-slate-100 text-sm">
+                                <!-- Populated dynamically via JS -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Interactive B2B Volume & Energy Output Calculator -->
+                <div class="bg-brand-cardBg rounded-[2rem] p-6 sm:p-10 border border-black/5">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                        <div class="lg:col-span-5 space-y-3">
+                            <span class="inline-block px-3 py-1 rounded-full bg-brand-green/10 text-brand-green text-xs font-bold uppercase tracking-wider">
+                                B2B Procurement Estimator
+                            </span>
+                            <h3 class="text-2xl sm:text-3xl font-black text-brand-dark tracking-tight">
+                                Volume & Energy Output Calculator
+                            </h3>
+                            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                                Adjust your required monthly or spot order volume in Metric Tons (MT) to estimate 40ft High Cube container requirements and net thermal energy yield (based on 4,700 kcal/kg NCV).
+                            </p>
+                            <div class="pt-2 flex flex-wrap gap-2.5">
+                                <button onclick="navigateTo('quote')" class="px-5 py-2.5 rounded-full bg-brand-orange hover:bg-orange-600 text-white font-bold text-xs transition-all">
+                                    Lock Pricing for This Volume &rarr;
+                                </button>
+                                <button onclick="navigateTo('logistics'); setTimeout(() => scrollToSimulator(), 100)" class="px-5 py-2.5 rounded-full bg-brand-dark hover:bg-brand-green text-white font-bold text-xs transition-all">
+                                    Simulate Container Load
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="lg:col-span-7 bg-white p-6 sm:p-8 rounded-[1.5rem] shadow-sm border border-black/5 space-y-6">
+                            <div>
+                                <div class="flex justify-between items-baseline mb-3">
+                                    <label for="tonnageRange" class="text-xs font-bold uppercase tracking-wider text-slate-500">Order Volume (Metric Tons)</label>
+                                    <span id="calcTonnageVal" class="text-2xl sm:text-3xl font-black text-brand-green">1,000 MT</span>
+                                </div>
+                                <input type="range" id="tonnageRange" min="100" max="15000" step="100" value="1000" oninput="updateCalc()" class="w-full h-2.5 bg-slate-200 rounded-lg appearance-none cursor-pointer">
+                                <div class="flex justify-between text-[11px] font-medium text-slate-400 mt-1.5">
+                                    <span>100 MT (Trial)</span>
+                                    <span>5,000 MT</span>
+                                    <span>10,000 MT</span>
+                                    <span>15,000 MT (Max Monthly)</span>
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4 border-t border-slate-100">
+                                <div class="p-4 rounded-2xl bg-[#F5F5F0]">
+                                    <span class="text-[11px] text-slate-500 uppercase font-bold block">40ft HC Containers</span>
+                                    <span id="calcContainersVal" class="font-black text-xl text-brand-dark mt-1 block">38 Containers</span>
+                                    <span class="text-[10px] text-slate-400">~26.5 MT / Container</span>
+                                </div>
+                                <div class="p-4 rounded-2xl bg-[#F5F5F0]">
+                                    <span class="text-[11px] text-slate-500 uppercase font-bold block">Thermal Energy (GCal)</span>
+                                    <span id="calcGcalVal" class="font-black text-xl text-brand-wood mt-1 block">4,700 GCal</span>
+                                    <span class="text-[10px] text-slate-400">Net Calorific Output</span>
+                                </div>
+                                <div class="p-4 rounded-2xl bg-[#F5F5F0]">
+                                    <span class="text-[11px] text-slate-500 uppercase font-bold block">Power Output (MWh)</span>
+                                    <span id="calcMwhVal" class="font-black text-xl text-brand-green mt-1 block">5,466 MWh</span>
+                                    <span class="text-[10px] text-slate-400">Thermal Equivalence</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- =====================================================================
+             VIEW 3: PRODUCTION & CAPACITY
+             ===================================================================== -->
+        <section id="view-production" class="page-view">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+                
+                <div class="max-w-3xl mb-12">
+                    <span class="text-xs font-bold uppercase tracking-widest text-brand-wood bg-brand-wood/10 px-3.5 py-1.5 rounded-full">Industrial Scale & Traceability</span>
+                    <h1 class="text-3xl sm:text-5xl font-black text-brand-dark mt-3 tracking-tight">Production & Capacity</h1>
+                    <p class="text-slate-600 mt-3 text-sm sm:text-base leading-relaxed">
+                        Operating automated European-engineered pelletizing lines in Java and Sumatra, Seka Synergy guarantees uninterrupted year-round supply backed by strict Indonesian timber legality assurance.
+                    </p>
+                </div>
+
+                <!-- Capacity & Sourcing Cards -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-12">
+                    <!-- Dark Capacity Card -->
+                    <div class="bg-brand-green text-white rounded-[2rem] p-8 sm:p-10 flex flex-col justify-between min-h-[340px] shadow-lg">
+                        <div class="flex justify-between items-center">
+                            <span class="text-xs font-bold uppercase tracking-widest text-emerald-300 bg-white/10 px-3.5 py-1.5 rounded-full">Manufacturing Output</span>
+                            <i class="fa-solid fa-industry text-2xl text-emerald-300/60"></i>
+                        </div>
+                        <div class="my-6">
+                            <span class="text-5xl sm:text-6xl font-black tracking-tight">15,000 MT</span>
+                            <span class="block text-emerald-200 text-base font-medium mt-2">Guaranteed Monthly Production Capacity (180,000 MT / Year)</span>
+                        </div>
+                        <div class="pt-6 border-t border-white/15 grid grid-cols-2 gap-4 text-xs">
+                            <div>
+                                <span class="text-emerald-300 font-bold block">Covered Warehouse Storage</span>
+                                <span class="text-slate-200">25,000 MT dry buffer stock</span>
+                            </div>
+                            <div>
+                                <span class="text-emerald-300 font-bold block">Line Redundancy</span>
+                                <span class="text-slate-200">Multi-mill cluster across Java & Sumatra</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sustainable Sourcing Card -->
+                    <div class="bg-brand-cardBg rounded-[2rem] p-8 sm:p-10 flex flex-col justify-between border border-black/5">
+                        <div class="flex justify-between items-center">
+                            <span class="text-xs font-bold uppercase tracking-widest text-brand-wood bg-white px-3.5 py-1.5 rounded-full">Legal & Sustainable Feedstock</span>
+                            <i class="fa-solid fa-tree text-2xl text-brand-wood/60"></i>
+                        </div>
+                        <div class="my-6">
+                            <h3 class="text-2xl sm:text-3xl font-extrabold text-brand-dark">100% Legal Plantation & Sawmill Residues</h3>
+                            <p class="text-xs sm:text-sm text-slate-600 mt-3 leading-relaxed">
+                                Our raw materials are strictly sourced from licensed timber processing industries and sustainable industrial forest plantations (Acacia, Rubberwood, Sengon/Albizia, and Mahogany). Zero natural rainforest timber is ever utilized.
+                            </p>
+                        </div>
+                        <div class="flex flex-wrap gap-2 pt-4 border-t border-black/10">
+                            <span class="px-3.5 py-1.5 rounded-full bg-white text-xs font-bold text-brand-green border border-black/5">SVLK (Indonesian Legal Wood)</span>
+                            <span class="px-3.5 py-1.5 rounded-full bg-white text-xs font-bold text-brand-dark border border-black/5">FSC® Chain-of-Custody</span>
+                            <span class="px-3.5 py-1.5 rounded-full bg-white text-xs font-bold text-brand-wood border border-black/5">Zero Chemical Additives</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4-Step Quality Control Workflow -->
+                <div class="bg-white rounded-[2rem] p-8 sm:p-10 shadow-sm border border-black/5">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-8 gap-2">
+                        <div>
+                            <span class="text-xs font-bold uppercase tracking-wider text-brand-green">End-to-End Assurance</span>
+                            <h3 class="text-2xl font-black text-brand-dark mt-1">4-Step Quality Control & Lab Testing</h3>
+                        </div>
+                        <span class="text-xs font-semibold text-slate-500">Inspected by SGS / Sucofindo prior to Bill of Lading</span>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                        <div class="p-6 rounded-[1.5rem] bg-[#F5F5F0] border border-black/5">
+                            <span class="w-9 h-9 rounded-full bg-brand-dark text-white font-black flex items-center justify-center text-xs mb-4">01</span>
+                            <h4 class="font-extrabold text-base text-brand-dark">Raw Material Screening</h4>
+                            <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+                                Incoming sawdust and wood chips undergo bark-content auditing, metal/sand separation, and initial moisture profiling.
+                            </p>
+                        </div>
+
+                        <div class="p-6 rounded-[1.5rem] bg-[#F5F5F0] border border-black/5">
+                            <span class="w-9 h-9 rounded-full bg-brand-dark text-white font-black flex items-center justify-center text-xs mb-4">02</span>
+                            <h4 class="font-extrabold text-base text-brand-dark">Drying & Hammer Milling</h4>
+                            <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+                                Rotary drum dryers reduce moisture to a uniform 8–10% before fine hammer milling ensures homogeneous particle size.
+                            </p>
+                        </div>
+
+                        <div class="p-6 rounded-[1.5rem] bg-[#F5F5F0] border border-black/5">
+                            <span class="w-9 h-9 rounded-full bg-brand-dark text-white font-black flex items-center justify-center text-xs mb-4">03</span>
+                            <h4 class="font-extrabold text-base text-brand-dark">Pelletizing & Cooling</h4>
+                            <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+                                High-pressure ring-die extrusion activates natural wood lignin, followed by counter-flow cooling and vibrating dust sieving (&lt; 0.5% fines).
+                            </p>
+                        </div>
+
+                        <div class="p-6 rounded-[1.5rem] bg-[#F5F5F0] border border-black/5">
+                            <span class="w-9 h-9 rounded-full bg-brand-green text-white font-black flex items-center justify-center text-xs mb-4">04</span>
+                            <h4 class="font-extrabold text-base text-brand-dark">SGS / Sucofindo Inspection</h4>
+                            <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+                                Independent third-party laboratory sampling verifies calorific value, ash, sulfur, and moisture before issuing Certificate of Analysis (COA).
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- =====================================================================
+             VIEW 4: EXPORT & LOGISTICS (WITH 3D ISOMETRIC CONTAINER SIMULATOR)
+             ===================================================================== -->
+        <section id="view-logistics" class="page-view">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+                
+                <!-- Header -->
+                <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-10">
+                    <div class="max-w-2xl">
+                        <span class="text-xs font-bold uppercase tracking-widest text-brand-green bg-brand-green/10 px-3.5 py-1.5 rounded-full">Global Maritime Readiness</span>
+                        <h1 class="text-3xl sm:text-5xl font-black text-brand-dark mt-3 tracking-tight">Export & Logistics</h1>
+                        <p class="text-slate-600 mt-3 text-sm sm:text-base leading-relaxed">
+                            Engineered for rapid port dispatch across Indonesia. Simulate container stuffing below to inspect cargo geometry, net tonnage, and unloading efficiency for your receiving warehouse.
+                        </p>
+                    </div>
+                    <div class="flex flex-wrap gap-3">
+                        <button onclick="navigateTo('quote')" class="px-6 py-3.5 rounded-full bg-brand-dark hover:bg-brand-green text-white font-bold text-sm transition-all">
+                            Request a Quote
+                        </button>
+                        <button onclick="scrollToSimulator()" class="px-5 py-3.5 rounded-full bg-white border border-black/10 hover:bg-black/5 text-brand-dark font-bold text-sm transition-all">
+                            <i class="fa-solid fa-cube mr-1.5 text-brand-wood"></i> Container Loads
+                        </button>
+                    </div>
+                </div>
+
+                <!-- =================================================================
+                     INTERACTIVE 3D ISOMETRIC CONTAINER STUFFING SIMULATOR
+                     ================================================================= -->
+                <div id="stuffingSimulatorSection" class="bg-white rounded-[2.25rem] p-6 sm:p-10 shadow-lg border border-black/10 mb-14">
+                    
+                    <!-- Simulator Top Header & Configuration Pills -->
+                    <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6 pb-6 border-b border-slate-100">
+                        <div>
+                            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-wood/10 text-brand-wood text-[11px] font-bold uppercase tracking-wider mb-2">
+                                <i class="fa-solid fa-cubes-stacked"></i>
+                                <span>Live 3D Isometric Load Plan</span>
+                            </div>
+                            <h2 class="text-2xl sm:text-3xl font-black text-brand-dark tracking-tight">
+                                Container Stuffing Simulator
+                            </h2>
+                            <p class="text-xs sm:text-sm text-slate-500 mt-1">
+                                Select container equipment and packaging configuration, then press <strong>Animate Loading</strong> to watch sequential rear-to-door stuffing.
+                            </p>
+                        </div>
+
+                        <!-- Container Size & Stuffing Method Controls -->
+                        <div class="flex flex-col sm:flex-row gap-3">
+                            <!-- Container Size Selector -->
+                            <div class="bg-[#EAEAE4] p-1.5 rounded-2xl flex items-center gap-1 border border-black/5">
+                                <button id="simSize20" onclick="setSimSize('20ft')" class="px-4 py-2 rounded-xl text-xs font-bold text-slate-700 hover:text-black transition-all">
+                                    20ft Standard
+                                </button>
+                                <button id="simSize40" onclick="setSimSize('40ft')" class="px-4 py-2 rounded-xl text-xs font-bold bg-brand-dark text-white shadow-sm transition-all">
+                                    40ft High Cube (HC)
+                                </button>
+                            </div>
+
+                            <!-- Stuffing Method Selector -->
+                            <div class="bg-[#EAEAE4] p-1.5 rounded-2xl flex flex-wrap items-center gap-1 border border-black/5">
+                                <button id="simMethodJumbo" onclick="setSimMethod('jumbo')" class="px-3.5 py-2 rounded-xl text-xs font-bold bg-brand-green text-white shadow-sm transition-all">
+                                    1-Ton Jumbo Bags (FIBC)
+                                </button>
+                                <button id="simMethodPallet" onclick="setSimMethod('pallet')" class="px-3.5 py-2 rounded-xl text-xs font-bold text-slate-700 hover:text-black transition-all">
+                                    15kg Bags on Pallets
+                                </button>
+                                <button id="simMethodBulk" onclick="setSimMethod('bulk')" class="px-3.5 py-2 rounded-xl text-xs font-bold text-slate-700 hover:text-black transition-all">
+                                    Bulk Floor-Load
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Main Simulator Stage: 3D Isometric Canvas + Live Telemetry Panel -->
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center pt-6">
+                        
+                        <!-- Left: Isometric 3D Canvas Viewport -->
+                        <div class="lg:col-span-8 bg-[#F5F5F0] rounded-[1.75rem] border border-black/5 p-4 sm:p-6 relative overflow-hidden">
+                            
+                            <!-- Top Status Pill Overlay -->
+                            <div class="flex flex-wrap items-center justify-between gap-2 mb-2 relative z-10">
+                                <span id="simConfigLabel" class="px-3.5 py-1.5 rounded-full bg-white text-brand-dark text-xs font-extrabold shadow-sm border border-black/5">
+                                    FCL 40FT HC • 1-TON JUMBO BAGS (FIBC)
+                                </span>
+                                <span id="simStatusBadge" class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-100 text-brand-green text-xs font-bold">
+                                    <span id="simStatusDot" class="w-2 h-2 rounded-full bg-emerald-600"></span>
+                                    <span id="simStatusText">Container Loaded & Ready</span>
+                                </span>
+                            </div>
+
+                            <!-- HTML5 3D Isometric Canvas -->
+                            <div id="stuffingCanvasWrapper">
+                                <canvas id="stuffingCanvas"></canvas>
+                            </div>
+
+                            <!-- Playback Control Bar -->
+                            <div class="mt-3 pt-4 border-t border-black/10 flex flex-col sm:flex-row items-center justify-between gap-4">
+                                <div class="flex items-center gap-2 w-full sm:w-auto justify-center">
+                                    <button id="btnSimPlay" onclick="playStuffingAnimation()" class="px-5 py-2.5 rounded-full bg-brand-green hover:bg-brand-dark text-white font-bold text-xs transition-all flex items-center gap-2 shadow-sm">
+                                        <i class="fa-solid fa-play"></i>
+                                        <span>Animate Loading</span>
+                                    </button>
+                                    <button id="btnSimPause" onclick="pauseStuffingAnimation()" class="px-4 py-2.5 rounded-full bg-white hover:bg-slate-100 text-brand-dark border border-black/10 font-bold text-xs transition-all flex items-center gap-1.5">
+                                        <i class="fa-solid fa-pause"></i>
+                                        <span>Pause</span>
+                                    </button>
+                                    <button id="btnSimReset" onclick="resetStuffingAnimation()" class="px-4 py-2.5 rounded-full bg-white hover:bg-slate-100 text-slate-600 border border-black/10 font-bold text-xs transition-all flex items-center gap-1.5">
+                                        <i class="fa-solid fa-rotate-left"></i>
+                                        <span>Reset</span>
+                                    </button>
+                                </div>
+
+                                <!-- Manual Progress Scrubber -->
+                                <div class="flex items-center gap-3 w-full sm:w-64">
+                                    <span class="text-[11px] font-bold text-slate-500 uppercase shrink-0">Progress</span>
+                                    <input type="range" id="simProgressSlider" min="0" max="100" value="100" oninput="scrubStuffingProgress(this.value)" class="w-full h-2 bg-slate-300 rounded-lg appearance-none cursor-pointer">
+                                    <span id="simProgressPct" class="text-xs font-black text-brand-dark w-10 text-right">100%</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Right: Real-Time Stuffing Telemetry & Cargo Specs -->
+                        <div class="lg:col-span-4 space-y-5">
+                            
+                            <!-- Primary Live Counter Card -->
+                            <div class="bg-brand-cardBg p-6 rounded-[1.75rem] border border-black/5 space-y-4">
+                                <div>
+                                    <span class="text-[11px] font-bold uppercase tracking-wider text-slate-500 block">Loaded Units</span>
+                                    <div class="flex items-baseline gap-2 mt-1">
+                                        <span id="simLoadedUnits" class="text-4xl font-black text-brand-dark">20</span>
+                                        <span id="simTotalUnits" class="text-lg font-bold text-slate-400">/ 20 Jumbo Bags</span>
+                                    </div>
+                                </div>
+
+                                <div class="grid grid-cols-2 gap-3 pt-3 border-t border-black/10">
+                                    <div>
+                                        <span class="text-[11px] font-bold uppercase text-slate-500 block">Net Payload</span>
+                                        <span id="simNetPayload" class="text-2xl font-black text-brand-green mt-0.5 block">26.00 MT</span>
+                                    </div>
+                                    <div>
+                                        <span class="text-[11px] font-bold uppercase text-slate-500 block">Cube Utilization</span>
+                                        <span id="simVolumeUtil" class="text-2xl font-black text-brand-wood mt-0.5 block">92%</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Engineering & Unloading Notes for Selected Method -->
+                            <div class="bg-[#F5F5F0] p-6 rounded-[1.75rem] border border-black/5 space-y-3 text-xs">
+                                <div class="flex items-center gap-2.5">
+                                    <div class="w-8 h-8 rounded-xl bg-brand-green/10 text-brand-green flex items-center justify-center">
+                                        <i class="fa-solid fa-shield-halved"></i>
+                                    </div>
+                                    <h3 id="simMethodTitle" class="font-extrabold text-sm text-brand-dark">1-Ton Jumbo Bags (FIBC)</h3>
+                                </div>
+                                <p id="simMethodDesc" class="text-slate-600 leading-relaxed">
+                                    20 UV-stabilized woven PP bags (1,300 kg each) arranged 2 abreast × 10 rows lengthwise with inner PE moisture liners and 4-point top lifting loops for rapid crane or forklift discharge.
+                                </p>
+                                <div class="pt-2 border-t border-black/5 space-y-1.5 text-[11px]">
+                                    <div class="flex justify-between">
+                                        <span class="text-slate-500">Internal Container Dim.:</span>
+                                        <span id="simContainerDim" class="font-bold text-brand-dark">12.03 × 2.35 × 2.69 m</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span class="text-slate-500">Moisture Protection:</span>
+                                        <span class="font-bold text-brand-green">Desiccant Poles + Kraft Liner</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span class="text-slate-500">Unloading Time at Port:</span>
+                                        <span id="simUnloadTime" class="font-bold text-brand-dark">~45 Mins (Forklift)</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button onclick="navigateTo('quote')" class="w-full py-3.5 rounded-full bg-brand-orange hover:bg-orange-600 text-white font-bold text-xs sm:text-sm transition-all shadow-md flex items-center justify-center gap-2">
+                                <span>Quote This Container Configuration</span>
+                                <i class="fa-solid fa-arrow-right text-xs"></i>
+                            </button>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3 Pillars of Logistics -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+                    <!-- Loading Ports -->
+                    <div class="bg-white p-7 rounded-[2rem] border border-black/5 shadow-sm flex flex-col justify-between">
+                        <div>
+                            <div class="w-11 h-11 rounded-2xl bg-brand-green/10 text-brand-green flex items-center justify-center text-lg mb-5">
+                                <i class="fa-solid fa-anchor"></i>
+                            </div>
+                            <h3 class="font-extrabold text-xl text-brand-dark">Primary Loading Ports</h3>
+                            <p class="text-xs text-slate-500 mt-1">Direct access to major international shipping lanes:</p>
+                            <ul class="mt-5 space-y-3 text-xs">
+                                <li class="flex justify-between items-center pb-2.5 border-b border-slate-100">
+                                    <span class="font-bold text-brand-dark">Tanjung Perak (IDSUB)</span>
+                                    <span class="px-2.5 py-0.5 rounded-full bg-slate-100 text-slate-600 font-semibold">Surabaya, East Java</span>
+                                </li>
+                                <li class="flex justify-between items-center pb-2.5 border-b border-slate-100">
+                                    <span class="font-bold text-brand-dark">Tanjung Priok (IDJKT)</span>
+                                    <span class="px-2.5 py-0.5 rounded-full bg-slate-100 text-slate-600 font-semibold">Jakarta, West Java</span>
+                                </li>
+                                <li class="flex justify-between items-center pb-2.5 border-b border-slate-100">
+                                    <span class="font-bold text-brand-dark">Belawan (IDBLW)</span>
+                                    <span class="px-2.5 py-0.5 rounded-full bg-slate-100 text-slate-600 font-semibold">Medan, North Sumatra</span>
+                                </li>
+                                <li class="flex justify-between items-center">
+                                    <span class="font-bold text-brand-dark">Tanjung Emas (IDSRG)</span>
+                                    <span class="px-2.5 py-0.5 rounded-full bg-slate-100 text-slate-600 font-semibold">Semarang, Central Java</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Incoterms & Vessel Capacity -->
+                    <div class="bg-white p-7 rounded-[2rem] border border-black/5 shadow-sm flex flex-col justify-between">
+                        <div>
+                            <div class="w-11 h-11 rounded-2xl bg-brand-wood/10 text-brand-wood flex items-center justify-center text-lg mb-5">
+                                <i class="fa-solid fa-ship"></i>
+                            </div>
+                            <h3 class="font-extrabold text-xl text-brand-dark">Incoterms & Shipment Scale</h3>
+                            <p class="text-xs text-slate-500 mt-1">Flexible contract terms for utilities and distributors:</p>
+                            <div class="mt-5 space-y-3 text-xs">
+                                <div class="p-3.5 bg-[#F5F5F0] rounded-2xl">
+                                    <div class="flex justify-between font-bold text-brand-dark mb-1">
+                                        <span>FOB (Free On Board)</span>
+                                        <span class="text-brand-green">Standard</span>
+                                    </div>
+                                    <p class="text-slate-600 leading-relaxed">Delivered and loaded onto buyer-nominated containers or bulk vessels at Indonesian port.</p>
+                                </div>
+                                <div class="p-3.5 bg-[#F5F5F0] rounded-2xl">
+                                    <div class="flex justify-between font-bold text-brand-dark mb-1">
+                                        <span>CIF / CFR</span>
+                                        <span class="text-brand-wood">Door-to-Port</span>
+                                    </div>
+                                    <p class="text-slate-600 leading-relaxed">Full ocean freight & marine insurance managed to Tokyo, Busan, Incheon, Rotterdam, or Antwerp.</p>
+                                </div>
+                                <div class="p-3.5 bg-brand-dark text-white rounded-2xl flex justify-between items-center">
+                                    <span class="font-semibold">40ft High Cube Payload:</span>
+                                    <span class="font-black text-brand-accent">26 – 28 MT / Container</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- International Payment Terms (T/T & L/C) -->
+                    <div class="bg-white p-7 rounded-[2rem] border border-black/5 shadow-sm flex flex-col justify-between">
+                        <div>
+                            <div class="w-11 h-11 rounded-2xl bg-black/5 text-brand-dark flex items-center justify-center text-lg mb-5">
+                                <i class="fa-solid fa-file-invoice-dollar"></i>
+                            </div>
+                            <h3 class="font-extrabold text-xl text-brand-dark">Payment Terms</h3>
+                            <p class="text-xs text-slate-500 mt-1">Secure international trade settlement via T/T & L/C:</p>
+                            <div class="mt-5 space-y-3 text-xs">
+                                <div class="p-3.5 rounded-2xl border border-slate-100">
+                                    <div class="flex items-center gap-2 font-extrabold text-brand-dark text-sm">
+                                        <i class="fa-solid fa-circle-check text-brand-green"></i>
+                                        <span>Trial / Spot Orders (1–5 FCL)</span>
+                                    </div>
+                                    <p class="text-slate-600 mt-1">30%–50% T/T advance deposit upon Purchase Order, balance 50%–70% against copy of Bill of Lading & SGS COA.</p>
+                                </div>
+                                <div class="p-3.5 rounded-2xl border border-slate-100">
+                                    <div class="flex items-center gap-2 font-extrabold text-brand-dark text-sm">
+                                        <i class="fa-solid fa-circle-check text-brand-green"></i>
+                                        <span>Long-Term Off-Take & Bulk</span>
+                                    </div>
+                                    <p class="text-slate-600 mt-1">100% Irrevocable Letter of Credit (L/C at sight) from prime international banks accepted for monthly allocations.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Export Documentation Banner -->
+                <div class="bg-brand-cardBg rounded-[2rem] p-6 sm:p-8 border border-black/5 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+                    <div class="space-y-1">
+                        <h4 class="text-lg font-extrabold text-brand-dark">Complete Export Documentation Compliance</h4>
+                        <p class="text-xs sm:text-sm text-slate-600">
+                            Every shipment includes Commercial Invoice, Packing List, Bill of Lading, Certificate of Origin (Form E / AK / IJEPA / EUR.1), V-Legal (SVLK), Phytosanitary Certificate, and SGS COA.
+                        </p>
+                    </div>
+                    <button onclick="navigateTo('quote')" class="shrink-0 px-6 py-3.5 rounded-full bg-brand-dark hover:bg-brand-green text-white font-bold text-xs sm:text-sm transition-all">
+                        Request CIF Freight Quote &rarr;
+                    </button>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- =====================================================================
+             VIEW 5: REQUEST A QUOTE (CONTACT & INTERNATIONAL RFQ FORM)
+             ===================================================================== -->
+        <section id="view-quote" class="page-view">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+                
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
+                    
+                    <!-- Left Corporate Info Column -->
+                    <div class="lg:col-span-5 space-y-6">
+                        <span class="text-xs font-bold uppercase tracking-widest text-brand-orange bg-brand-orange/10 px-3.5 py-1.5 rounded-full">Direct Factory Desk</span>
+                        <h1 class="text-3xl sm:text-5xl font-black text-brand-dark tracking-tight">Request a Quote</h1>
+                        <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+                            Submit your procurement specifications below. Our International Trade & Export team will issue a formal FOB or CIF commercial quotation within 12 business hours.
+                        </p>
+
+                        <!-- Direct Contact Card -->
+                        <div class="bg-brand-cardBg p-7 rounded-[2rem] border border-black/5 space-y-5 text-xs">
+                            <div>
+                                <span class="text-[11px] font-bold uppercase tracking-wider text-slate-400 block">Legal Corporate Entity</span>
+                                <span class="font-extrabold text-base text-brand-dark mt-0.5 block">PT Seka Sinergi Nusantara</span>
+                                <span class="text-slate-600">Indonesia Biomass Manufacturing & Export Division</span>
+                            </div>
+
+                            <div class="pt-4 border-t border-black/10 space-y-3.5">
+                                <div class="flex items-start gap-3">
+                                    <div class="w-8 h-8 rounded-full bg-white flex items-center justify-center text-brand-green shrink-0">
+                                        <i class="fa-solid fa-envelope"></i>
+                                    </div>
+                                    <div>
+                                        <span class="font-bold text-brand-dark block">Export Sales Inquiries</span>
+                                        <span class="text-slate-600 font-medium">sales@sekasinergi.com</span>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-start gap-3">
+                                    <div class="w-8 h-8 rounded-full bg-white flex items-center justify-center text-brand-wood shrink-0">
+                                        <i class="fa-solid fa-phone"></i>
+                                    </div>
+                                    <div>
+                                        <span class="font-bold text-brand-dark block">International Trade Desk (WhatsApp / Call)</span>
+                                        <span class="text-slate-600 font-medium">+62 811-3456-7890</span>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-start gap-3">
+                                    <div class="w-8 h-8 rounded-full bg-white flex items-center justify-center text-brand-dark shrink-0">
+                                        <i class="fa-solid fa-clock"></i>
+                                    </div>
+                                    <div>
+                                        <span class="font-bold text-brand-dark block">Response SLA & Sample Dispatch</span>
+                                        <span class="text-slate-600">Quotes within 12 hrs • 2kg DHL/FedEx lab samples available upon request</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right RFQ Form Column -->
+                    <div class="lg:col-span-7 bg-white p-6 sm:p-10 rounded-[2rem] border border-black/5 shadow-xl">
+                        
+                        <!-- Interactive Confirmation Message Box -->
+                        <div id="quoteSuccessAlert" class="hidden mb-6 p-5 rounded-2xl bg-emerald-50 border border-emerald-200 text-emerald-900">
+                            <div class="flex items-start gap-3">
+                                <i class="fa-solid fa-circle-check text-emerald-600 text-xl mt-0.5"></i>
+                                <div class="text-xs sm:text-sm space-y-1">
+                                    <h4 class="font-extrabold text-emerald-950">Official RFQ Received — Thank You!</h4>
+                                    <p class="text-emerald-800 leading-relaxed">
+                                        Your inquiry for <strong id="confirmVolume"></strong> (<strong id="confirmIncoterm"></strong> to <strong id="confirmPort"></strong>) has been logged with our export desk. We will send your formal quotation to <strong id="confirmEmail"></strong> shortly.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <form id="rfqForm" onsubmit="handleQuoteSubmit(event)" class="space-y-5">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">Company Name *</label>
+                                    <input type="text" id="rfqCompany" required placeholder="e.g. Pacific Biomass Power Ltd." class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand-green text-sm bg-[#F5F5F0]/50">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">Contact Person & Title *</label>
+                                    <input type="text" id="rfqName" required placeholder="e.g. Kenji Takahashi, Procurement Lead" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand-green text-sm bg-[#F5F5F0]/50">
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">Business Email *</label>
+                                    <input type="email" id="rfqEmail" required placeholder="procurement@company.com" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand-green text-sm bg-[#F5F5F0]/50">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">Country / Region *</label>
+                                    <input type="text" id="rfqCountry" required placeholder="e.g. Japan, South Korea, Netherlands" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand-green text-sm bg-[#F5F5F0]/50">
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                                <div>
+                                    <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">Order Volume (MT) *</label>
+                                    <input type="number" id="rfqVolume" required min="50" placeholder="e.g. 2000" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand-green text-sm bg-[#F5F5F0]/50">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">Preferred Incoterms *</label>
+                                    <select id="rfqIncoterm" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand-green text-sm bg-white">
+                                        <option value="FOB Indonesia Port">FOB Indonesia Port</option>
+                                        <option value="CIF Destination Port">CIF Destination Port</option>
+                                        <option value="CFR Destination Port">CFR Destination Port</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">Destination Port *</label>
+                                    <input type="text" id="rfqPort" required placeholder="e.g. Busan / Tokyo / Rotterdam" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand-green text-sm bg-[#F5F5F0]/50">
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">Pellet Grade & Diameter</label>
+                                    <select id="rfqGrade" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand-green text-sm bg-white">
+                                        <option>Premium Grade A1 — 6mm</option>
+                                        <option>Premium Grade A1 — 8mm</option>
+                                        <option>Industrial Utility Grade — 8mm</option>
+                                        <option>Custom Specification (Detail below)</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">Packaging & Stuffing Format</label>
+                                    <select id="rfqPackaging" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand-green text-sm bg-white">
+                                        <option>1-Ton Jumbo Bags (FIBC)</option>
+                                        <option>15kg Retail Bags on Pallets</option>
+                                        <option>Bulk Floor-Load / Breakbulk Vessel</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">Additional Technical Notes / Target Delivery Schedule</label>
+                                <textarea id="rfqNotes" rows="3" placeholder="Specify contract duration (spot vs. 12-month off-take), required certifications (FSC/SVLK), or sample request..." class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand-green text-sm bg-[#F5F5F0]/50"></textarea>
+                            </div>
+
+                            <button type="submit" class="w-full py-4 rounded-full bg-brand-orange hover:bg-orange-600 text-white font-bold text-sm transition-all shadow-lg shadow-orange-500/20 flex items-center justify-center gap-2">
+                                <span>Submit International RFQ</span>
+                                <i class="fa-solid fa-paper-plane text-xs"></i>
+                            </button>
+                        </form>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-brand-dark text-slate-400 text-xs py-12 mt-16 border-t border-black/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 pb-8 border-b border-white/10">
+                <div class="space-y-1.5">
+                    <div class="flex items-center gap-2.5 text-white font-black text-base">
+                        <span class="w-7 h-7 rounded-full bg-brand-green flex items-center justify-center text-xs">
+                            <i class="fa-solid fa-seedling"></i>
+                        </span>
+                        <span>Seka Synergy</span>
+                    </div>
+                    <p class="text-slate-400">PT Seka Sinergi Nusantara — Sustainable Indonesian Wood Pellet Manufacturer & Exporter.</p>
+                </div>
+
+                <div class="flex flex-wrap gap-2">
+                    <button onclick="navigateTo('home')" class="px-4 py-2 rounded-full bg-white/5 hover:bg-white/15 text-slate-200 transition-colors">Home</button>
+                    <button onclick="navigateTo('products')" class="px-4 py-2 rounded-full bg-white/5 hover:bg-white/15 text-slate-200 transition-colors">Products & Specs</button>
+                    <button onclick="navigateTo('production')" class="px-4 py-2 rounded-full bg-white/5 hover:bg-white/15 text-slate-200 transition-colors">Production</button>
+                    <button onclick="navigateTo('logistics')" class="px-4 py-2 rounded-full bg-white/5 hover:bg-white/15 text-slate-200 transition-colors">Export & Logistics</button>
+                    <button onclick="navigateTo('quote')" class="px-4 py-2 rounded-full bg-brand-orange text-white font-semibold hover:bg-orange-600 transition-colors">Request a Quote</button>
+                </div>
+            </div>
+
+            <div class="pt-6 flex flex-col sm:flex-row justify-between items-center gap-4 text-[11px] text-slate-500">
+                <p>&copy; 2026 PT Seka Sinergi Nusantara. All rights reserved.</p>
+                <div class="flex items-center gap-4">
+                    <span>sales@sekasinergi.com</span>
+                    <span>•</span>
+                    <span>SVLK & FSC® Compliant Biomass</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- OFFICIAL PDF SPECIFICATION SHEET PREVIEW MODAL -->
+    <div id="pdfModal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-[2rem] max-w-xl w-full p-6 sm:p-8 shadow-2xl relative border border-black/10">
+            <button onclick="closePdfModal()" aria-label="Close Modal" class="absolute top-5 right-5 w-9 h-9 rounded-full bg-slate-100 hover:bg-slate-200 flex items-center justify-center text-slate-600 hover:text-black transition-colors">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div class="flex items-center gap-3.5 mb-5">
+                <div class="w-12 h-12 rounded-2xl bg-red-50 text-red-600 flex items-center justify-center text-2xl shrink-0">
+                    <i class="fa-solid fa-file-pdf"></i>
+                </div>
+                <div>
+                    <span class="text-[10px] font-bold uppercase tracking-wider text-brand-green">Technical Datasheet & COA</span>
+                    <h3 class="font-extrabold text-base sm:text-lg text-brand-dark">Seka_Sinergi_Wood_Pellet_Spec_2026.pdf</h3>
+                    <p class="text-xs text-slate-500">PT Seka Sinergi Nusantara • Laboratory Verified Parameters</p>
+                </div>
+            </div>
+
+            <div class="bg-[#F5F5F0] p-5 rounded-2xl text-xs space-y-2.5 mb-6 border border-black/5">
+                <div class="flex justify-between border-b border-black/5 pb-2">
+                    <span class="text-slate-500">Net Calorific Value (NCV):</span>
+                    <span class="font-bold text-brand-dark">4,650 – 4,800 kcal/kg</span>
+                </div>
+                <div class="flex justify-between border-b border-black/5 pb-2">
+                    <span class="text-slate-500">Total Moisture (AR):</span>
+                    <span class="font-bold text-brand-dark">&le; 8.0% (Grade A1) / &le; 10.0% (Industrial)</span>
+                </div>
+                <div class="flex justify-between border-b border-black/5 pb-2">
+                    <span class="text-slate-500">Ash Content (550°C):</span>
+                    <span class="font-bold text-brand-dark">&le; 0.85% (Grade A1) / &le; 1.5% (Industrial)</span>
+                </div>
+                <div class="flex justify-between border-b border-black/5 pb-2">
+                    <span class="text-slate-500">Diameter & Bulk Density:</span>
+                    <span class="font-bold text-brand-dark">6mm / 8mm • &ge; 660 kg/m³</span>
+                </div>
+                <div class="flex justify-between">
+                    <span class="text-slate-500">Compliance & Testing:</span>
+                    <span class="font-bold text-brand-green">SVLK, FSC®, ISO 17225-2, SGS Inspected</span>
+                </div>
+            </div>
+
+            <div class="flex flex-col sm:flex-row justify-end gap-3">
+                <button onclick="closePdfModal()" class="px-5 py-3 rounded-full text-xs font-bold text-slate-600 bg-slate-100 hover:bg-slate-200 transition-colors">
+                    Close Preview
+                </button>
+                <a href="assets/docs/Seka_Sinergi_Wood_Pellet_Spec_2026.pdf" download="Seka_Sinergi_Wood_Pellet_Spec_2026.pdf" target="_blank" class="px-6 py-3 rounded-full text-xs font-bold text-white bg-brand-green hover:bg-brand-dark transition-colors inline-flex items-center justify-center gap-2 shadow-md">
+                    <i class="fa-solid fa-download"></i>
+                    <span>Download Official PDF</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- APPLICATION JAVASCRIPT -->
+    <script>
+        // =========================================================================
+        // 1. TECHNICAL SPECIFICATIONS DATA
+        // =========================================================================
+        const specsData = {
+            'A1': {
+                title: 'Premium Grade A1 Wood Pellets (ENplus A1 / ISO 17225-2)',
+                subtitle: 'Engineered for high-efficiency industrial boilers, commercial heating, and stringent European & Japanese power plant standards.',
+                rows: [
+                    { param: 'Net Calorific Value (NCV)', method: 'ISO 18125', val: '4,650 – 4,800 kcal/kg', limit: 'Min. 4,600 kcal/kg' },
+                    { param: 'Total Moisture (As Received)', method: 'ISO 18134', val: '6.5% – 8.0%', limit: 'Max. 8.0%' },
+                    { param: 'Ash Content (Dry Basis 550°C)', method: 'ISO 18122', val: '0.6% – 0.85%', limit: 'Max. 1.0%' },
+                    { param: 'Diameter / Length', method: 'ISO 17829', val: '6.0 mm or 8.0 mm / 10–40 mm', limit: '± 0.5 mm' },
+                    { param: 'Bulk Density', method: 'ISO 17828', val: '660 – 700 kg/m³', limit: 'Min. 650 kg/m³' },
+                    { param: 'Mechanical Durability', method: 'ISO 17831-1', val: '≥ 98.2%', limit: 'Min. 98.0%' },
+                    { param: 'Fines (< 3.15 mm)', method: 'ISO 18846', val: '≤ 0.5%', limit: 'Max. 1.0%' },
+                    { param: 'Total Sulfur / Chlorine', method: 'ISO 16994', val: 'S ≤ 0.02% / Cl ≤ 0.01%', limit: 'Ultra-Low Emission' }
+                ]
+            },
+            'Industrial': {
+                title: 'Industrial Utility Grade Wood Pellets (ISO 17225-2 I1/I2)',
+                subtitle: 'Cost-effective, high-volume biomass fuel optimized for coal co-firing power plants, cement kilns, and industrial steam boilers.',
+                rows: [
+                    { param: 'Net Calorific Value (NCV)', method: 'ISO 18125', val: '4,500 – 4,650 kcal/kg', limit: 'Min. 4,450 kcal/kg' },
+                    { param: 'Total Moisture (As Received)', method: 'ISO 18134', val: '8.0% – 10.0%', limit: 'Max. 10.0%' },
+                    { param: 'Ash Content (Dry Basis 550°C)', method: 'ISO 18122', val: '1.0% – 1.5%', limit: 'Max. 1.8%' },
+                    { param: 'Diameter / Length', method: 'ISO 17829', val: '8.0 mm / 10–40 mm', limit: '± 0.5 mm' },
+                    { param: 'Bulk Density', method: 'ISO 17828', val: '640 – 680 kg/m³', limit: 'Min. 620 kg/m³' },
+                    { param: 'Mechanical Durability', method: 'ISO 17831-1', val: '≥ 97.5%', limit: 'Min. 97.0%' },
+                    { param: 'Fines (< 3.15 mm)', method: 'ISO 18846', val: '≤ 1.0%', limit: 'Max. 1.5%' },
+                    { param: 'Total Sulfur / Chlorine', method: 'ISO 16994', val: 'S ≤ 0.03% / Cl ≤ 0.02%', limit: 'Utility Compliant' }
+                ]
+            }
+        };
+
+        // =========================================================================
+        // 2. MULTI-PAGE SPA VIEW ROUTER
+        // =========================================================================
+        function navigateTo(pageId) {
+            document.querySelectorAll('.page-view').forEach(view => {
+                view.classList.remove('active');
+            });
+
+            const targetView = document.getElementById('view-' + pageId);
+            if (targetView) {
+                targetView.classList.add('active');
+            }
+
+            // Update Pill Navigation States
+            document.querySelectorAll('header nav button').forEach(btn => {
+                btn.classList.remove('nav-pill-active');
+            });
+            const activePill = document.getElementById('nav-' + pageId);
+            if (activePill) {
+                activePill.classList.add('nav-pill-active');
+            }
+
+            // Resize and render 3D canvas when Export & Logistics view opens
+            if (pageId === 'logistics') {
+                setTimeout(() => {
+                    resizeStuffingCanvas();
+                    drawStuffingScene();
+                }, 40);
+            }
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function scrollToSimulator() {
+            const simSection = document.getElementById('stuffingSimulatorSection');
+            if (simSection) {
+                simSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+
+        // =========================================================================
+        // 3. PRODUCT SPECS & B2B CALCULATOR
+        // =========================================================================
+        function renderSpecs(grade) {
+            const data = specsData[grade];
+            document.getElementById('specTableTitle').innerText = data.title;
+            document.getElementById('specTableSubtitle').innerText = data.subtitle;
+
+            const tbody = document.getElementById('specTableBody');
+            tbody.innerHTML = '';
+            data.rows.forEach(row => {
+                const tr = document.createElement('tr');
+                tr.className = 'hover:bg-slate-50/80 transition-colors';
+                tr.innerHTML = `
+                    <td class="py-4 pr-4 font-bold text-brand-dark">${row.param}</td>
+                    <td class="py-4 px-4 font-mono text-xs text-slate-500">${row.method}</td>
+                    <td class="py-4 px-4 font-extrabold text-brand-green">${row.val}</td>
+                    <td class="py-4 pl-4 text-right text-xs font-semibold text-slate-500">${row.limit}</td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+
+        function switchSpecTab(grade) {
+            renderSpecs(grade);
+            const btnA1 = document.getElementById('tabGradeA1');
+            const btnInd = document.getElementById('tabGradeIndustrial');
+
+            if (grade === 'A1') {
+                btnA1.className = 'px-5 sm:px-6 py-2.5 rounded-full bg-brand-dark text-white font-bold text-xs sm:text-sm transition-all';
+                btnInd.className = 'px-5 sm:px-6 py-2.5 rounded-full text-slate-700 hover:text-black font-bold text-xs sm:text-sm transition-all';
+            } else {
+                btnInd.className = 'px-5 sm:px-6 py-2.5 rounded-full bg-brand-dark text-white font-bold text-xs sm:text-sm transition-all';
+                btnA1.className = 'px-5 sm:px-6 py-2.5 rounded-full text-slate-700 hover:text-black font-bold text-xs sm:text-sm transition-all';
+            }
+        }
+
+        function updateCalc() {
+            const mt = parseInt(document.getElementById('tonnageRange').value, 10);
+            const containers = Math.ceil(mt / 26.5);
+            const gcal = Math.round(mt * 4.7);
+            const mwh = Math.round(gcal * 1.163);
+
+            document.getElementById('calcTonnageVal').innerText = mt.toLocaleString() + ' MT';
+            document.getElementById('calcContainersVal').innerText = containers.toLocaleString() + (containers === 1 ? ' Container' : ' Containers');
+            document.getElementById('calcGcalVal').innerText = gcal.toLocaleString() + ' GCal';
+            document.getElementById('calcMwhVal').innerText = mwh.toLocaleString() + ' MWh';
+        }
+
+        // =========================================================================
+        // 4. INTERACTIVE 3D ISOMETRIC CONTAINER STUFFING SIMULATOR
+        // =========================================================================
+        const simConfigs = {
+            '40ft_jumbo': {
+                label: 'FCL 40FT HC • 1-TON JUMBO BAGS (FIBC)',
+                title: '1-Ton Jumbo Bags (FIBC) — 40ft High Cube',
+                desc: '20 UV-stabilized woven PP bags (1,300 kg each) arranged 2 abreast × 10 rows lengthwise with inner PE moisture liners and 4-point top lifting loops for rapid crane or forklift discharge.',
+                dim: '12.03 × 2.35 × 2.69 m',
+                unloadTime: '~45 Mins (Forklift)',
+                unitLabel: 'Jumbo Bags',
+                cols: 10, rows: 2, tiers: 1, // 20 units
+                unitWeight: 1.30, // 26.00 MT total
+                maxUtil: 92,
+                colorTop: '#E6D5B8', colorLeft: '#C8B08A', colorRight: '#B0956E',
+                hasStraps: true, hasPalletBase: false, isBulk: false
+            },
+            '20ft_jumbo': {
+                label: 'FCL 20FT STD • 1-TON JUMBO BAGS (FIBC)',
+                title: '1-Ton Jumbo Bags (FIBC) — 20ft Standard',
+                desc: '10 heavy-duty FIBC bags (1,300 kg each) arranged 2 abreast × 5 rows lengthwise. Ideal for trial orders or industrial facilities with tighter yard access.',
+                dim: '5.90 × 2.35 × 2.39 m',
+                unloadTime: '~25 Mins (Forklift)',
+                unitLabel: 'Jumbo Bags',
+                cols: 5, rows: 2, tiers: 1, // 10 units
+                unitWeight: 1.30, // 13.00 MT total
+                maxUtil: 88,
+                colorTop: '#E6D5B8', colorLeft: '#C8B08A', colorRight: '#B0956E',
+                hasStraps: true, hasPalletBase: false, isBulk: false
+            },
+            '40ft_pallet': {
+                label: 'FCL 40FT HC • 15KG RETAIL BAGS ON PALLETS',
+                title: '15kg Retail Bags on ISPM-15 Pallets — 40ft HC',
+                desc: '20 heat-treated pallets (2 abreast × 10 rows), each carrying 80 stretch-wrapped 15kg PE bags (1,200 kg/pallet). Built for European and Asian retail distribution hubs.',
+                dim: '12.03 × 2.35 × 2.69 m',
+                unloadTime: '~35 Mins (Dock Leveler)',
+                unitLabel: 'Pallets (1,600 Bags)',
+                cols: 10, rows: 2, tiers: 1, // 20 pallets
+                unitWeight: 1.20, // 24.00 MT total
+                maxUtil: 89,
+                colorTop: '#D4A373', colorLeft: '#A97848', colorRight: '#8B5A2B',
+                hasStraps: false, hasPalletBase: true, isBulk: false
+            },
+            '20ft_pallet': {
+                label: 'FCL 20FT STD • 15KG RETAIL BAGS ON PALLETS',
+                title: '15kg Retail Bags on ISPM-15 Pallets — 20ft Std',
+                desc: '10 strapped pallets (2 abreast × 5 rows), each loaded with 80 × 15kg PE bags (1,200 kg/pallet) for instant dock unloading.',
+                dim: '5.90 × 2.35 × 2.39 m',
+                unloadTime: '~20 Mins (Dock Leveler)',
+                unitLabel: 'Pallets (800 Bags)',
+                cols: 5, rows: 2, tiers: 1, // 10 pallets
+                unitWeight: 1.20, // 12.00 MT total
+                maxUtil: 86,
+                colorTop: '#D4A373', colorLeft: '#A97848', colorRight: '#8B5A2B',
+                hasStraps: false, hasPalletBase: true, isBulk: false
+            },
+            '40ft_bulk': {
+                label: 'FCL 40FT HC • BULK FLOOR-LOAD (LINER BAG)',
+                title: 'Bulk Container Liner Floor-Load — 40ft HC',
+                desc: 'Full-container woven PE bulk liner filled via pneumatic/belt conveyor to 27.50 MT maximum payload. Eliminates packaging waste for automated power plant tipplers.',
+                dim: '12.03 × 2.35 × 2.69 m',
+                unloadTime: '~30 Mins (Container Tilter)',
+                unitLabel: 'Bulk Compartments',
+                cols: 10, rows: 2, tiers: 2, // 40 volumetric segments
+                unitWeight: 0.6875, // 27.50 MT total
+                maxUtil: 96,
+                colorTop: '#9C7A54', colorLeft: '#7F5F3D', colorRight: '#63482B',
+                hasStraps: false, hasPalletBase: false, isBulk: true
+            },
+            '20ft_bulk': {
+                label: 'FCL 20FT STD • BULK FLOOR-LOAD (LINER BAG)',
+                title: 'Bulk Container Liner Floor-Load — 20ft Std',
+                desc: 'Full-container PE bulk liner filled to 14.00 MT net payload with bulkhead retaining bars at the container doors.',
+                dim: '5.90 × 2.35 × 2.39 m',
+                unloadTime: '~20 Mins (Container Tilter)',
+                unitLabel: 'Bulk Compartments',
+                cols: 5, rows: 2, tiers: 2, // 20 volumetric segments
+                unitWeight: 0.70, // 14.00 MT total
+                maxUtil: 94,
+                colorTop: '#9C7A54', colorLeft: '#7F5F3D', colorRight: '#63482B',
+                hasStraps: false, hasPalletBase: false, isBulk: true
+            }
+        };
+
+        let simState = {
+            size: '40ft',
+            method: 'jumbo',
+            progress: 100, // 0 to 100
+            isPlaying: false,
+            animFrameId: null,
+            lastTimestamp: 0
+        };
+
+        function getActiveSimConfig() {
+            return simConfigs[`${simState.size}_${simState.method}`];
+        }
+
+        function setSimSize(size) {
+            simState.size = size;
+            document.getElementById('simSize20').className = size === '20ft'
+                ? 'px-4 py-2 rounded-xl text-xs font-bold bg-brand-dark text-white shadow-sm transition-all'
+                : 'px-4 py-2 rounded-xl text-xs font-bold text-slate-700 hover:text-black transition-all';
+            document.getElementById('simSize40').className = size === '40ft'
+                ? 'px-4 py-2 rounded-xl text-xs font-bold bg-brand-dark text-white shadow-sm transition-all'
+                : 'px-4 py-2 rounded-xl text-xs font-bold text-slate-700 hover:text-black transition-all';
+            
+            updateSimMetadata();
+            playStuffingAnimation(true);
+        }
+
+        function setSimMethod(method) {
+            simState.method = method;
+            const map = {
+                'jumbo': 'simMethodJumbo',
+                'pallet': 'simMethodPallet',
+                'bulk': 'simMethodBulk'
+            };
+            Object.keys(map).forEach(key => {
+                const btn = document.getElementById(map[key]);
+                btn.className = key === method
+                    ? 'px-3.5 py-2 rounded-xl text-xs font-bold bg-brand-green text-white shadow-sm transition-all'
+                    : 'px-3.5 py-2 rounded-xl text-xs font-bold text-slate-700 hover:text-black transition-all';
+            });
+
+            updateSimMetadata();
+            playStuffingAnimation(true);
+        }
+
+        function updateSimMetadata() {
+            const cfg = getActiveSimConfig();
+            document.getElementById('simConfigLabel').innerText = cfg.label;
+            document.getElementById('simMethodTitle').innerText = cfg.title;
+            document.getElementById('simMethodDesc').innerText = cfg.desc;
+            document.getElementById('simContainerDim').innerText = cfg.dim;
+            document.getElementById('simUnloadTime').innerText = cfg.unloadTime;
+            updateSimTelemetry();
+        }
+
+        function updateSimTelemetry() {
+            const cfg = getActiveSimConfig();
+            const totalUnits = cfg.cols * cfg.rows * cfg.tiers;
+            const exactUnits = (simState.progress / 100) * totalUnits;
+            const loadedUnits = Math.floor(exactUnits);
+            const payload = (exactUnits * cfg.unitWeight).toFixed(2);
+            const util = Math.round((simState.progress / 100) * cfg.maxUtil);
+
+            document.getElementById('simLoadedUnits').innerText = loadedUnits;
+            document.getElementById('simTotalUnits').innerText = `/ ${totalUnits} ${cfg.unitLabel}`;
+            document.getElementById('simNetPayload').innerText = `${payload} MT`;
+            document.getElementById('simVolumeUtil').innerText = `${util}%`;
+
+            document.getElementById('simProgressSlider').value = Math.round(simState.progress);
+            document.getElementById('simProgressPct').innerText = `${Math.round(simState.progress)}%`;
+
+            const badge = document.getElementById('simStatusBadge');
+            const dot = document.getElementById('simStatusDot');
+            const txt = document.getElementById('simStatusText');
+
+            if (simState.progress >= 99.9) {
+                badge.className = 'inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-100 text-brand-green text-xs font-bold';
+                dot.className = 'w-2 h-2 rounded-full bg-emerald-600';
+                txt.innerText = 'Container Loaded & Sealed';
+            } else if (simState.isPlaying) {
+                badge.className = 'inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-100 text-amber-800 text-xs font-bold';
+                dot.className = 'w-2 h-2 rounded-full bg-amber-500 animate-ping';
+                txt.innerText = 'Stuffing in Progress...';
+            } else if (simState.progress === 0) {
+                badge.className = 'inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-200 text-slate-700 text-xs font-bold';
+                dot.className = 'w-2 h-2 rounded-full bg-slate-500';
+                txt.innerText = 'Empty Container Ready';
+            } else {
+                badge.className = 'inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-100 text-blue-800 text-xs font-bold';
+                dot.className = 'w-2 h-2 rounded-full bg-blue-600';
+                txt.innerText = 'Loading Paused';
+            }
+        }
+
+        function playStuffingAnimation(restartFromZero = false) {
+            if (restartFromZero || simState.progress >= 100) {
+                simState.progress = 0;
+            }
+            simState.isPlaying = true;
+            simState.lastTimestamp = performance.now();
+            if (simState.animFrameId) cancelAnimationFrame(simState.animFrameId);
+            simState.animFrameId = requestAnimationFrame(stepStuffingAnimation);
+        }
+
+        function pauseStuffingAnimation() {
+            simState.isPlaying = false;
+            if (simState.animFrameId) {
+                cancelAnimationFrame(simState.animFrameId);
+                simState.animFrameId = null;
+            }
+            updateSimTelemetry();
+            drawStuffingScene();
+        }
+
+        function resetStuffingAnimation() {
+            pauseStuffingAnimation();
+            simState.progress = 0;
+            updateSimTelemetry();
+            drawStuffingScene();
+        }
+
+        function scrubStuffingProgress(val) {
+            pauseStuffingAnimation();
+            simState.progress = parseFloat(val);
+            updateSimTelemetry();
+            drawStuffingScene();
+        }
+
+        function stepStuffingAnimation(now) {
+            if (!simState.isPlaying) return;
+            const dt = (now - simState.lastTimestamp) / 1000;
+            simState.lastTimestamp = now;
+
+            // Complete full container stuffing in ~4.2 seconds
+            simState.progress += dt * 24;
+            if (simState.progress >= 100) {
+                simState.progress = 100;
+                simState.isPlaying = false;
+            }
+
+            updateSimTelemetry();
+            drawStuffingScene();
+
+            if (simState.isPlaying) {
+                simState.animFrameId = requestAnimationFrame(stepStuffingAnimation);
+            }
+        }
+
+        function resizeStuffingCanvas() {
+            const wrapper = document.getElementById('stuffingCanvasWrapper');
+            const canvas = document.getElementById('stuffingCanvas');
+            if (!wrapper || !canvas) return;
+            const dpr = window.devicePixelRatio || 1;
+            const rect = wrapper.getBoundingClientRect();
+            canvas.width = rect.width * dpr;
+            canvas.height = rect.height * dpr;
+            const ctx = canvas.getContext('2d');
+            ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        }
+
+        // Isometric 3D Projection Helper
+        function drawStuffingScene() {
+            const canvas = document.getElementById('stuffingCanvas');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+            const dpr = window.devicePixelRatio || 1;
+            const W = canvas.width / dpr;
+            const H = canvas.height / dpr;
+            if (W === 0 || H === 0) return;
+
+            ctx.clearRect(0, 0, W, H);
+
+            const cfg = getActiveSimConfig();
+            const is40 = simState.size === '40ft';
+
+            // Container dimensions in normalized 3D grid units
+            // X: length (0 = rear bulkhead, L = front DOOR)
+            // Y: width (0 = far wall, Wd = near wall)
+            // Z: height (0 = floor, Ht = ceiling)
+            const L = is40 ? 10.0 : 5.4;
+            const Wd = 2.4;
+            const Ht = is40 ? 2.55 : 2.30;
+
+            // Dynamic scale to fit canvas nicely on mobile & desktop
+            const totalIsoSpanX = (L + Wd) * 0.866;
+            const totalIsoSpanY = (L + Wd) * 0.5 + Ht;
+            const scale = Math.min((W * 0.80) / totalIsoSpanX, (H * 0.76) / totalIsoSpanY);
+
+            const cos30 = 0.8660254;
+            const sin30 = 0.5;
+
+            // Project 3D (x, y, z) -> 2D screen (sx, sy)
+            // Center container inside viewport
+            const centerX = L / 2;
+            const centerY = Wd / 2;
+            const centerZ = Ht / 2;
+            const originX = W * 0.49 - (centerX - centerY) * cos30 * scale;
+            const originY = H * 0.53 - ((centerX + centerY) * sin30 - centerZ) * scale;
+
+            function iso(x, y, z) {
+                return {
+                    x: originX + (x - y) * cos30 * scale,
+                    y: originY + ((x + y) * sin30 - z) * scale
+                };
+            }
+
+            // Helper to draw a 3D isometric box
+            function drawIsoBox(x0, y0, z0, dx, dy, dz, colors, strokeColor = 'rgba(0,0,0,0.18)', lineWidth = 0.8) {
+                const p000 = iso(x0, y0, z0);
+                const p100 = iso(x0 + dx, y0, z0);
+                const p110 = iso(x0 + dx, y0 + dy, z0);
+                const p010 = iso(x0, y0 + dy, z0);
+
+                const p001 = iso(x0, y0, z0 + dz);
+                const p101 = iso(x0 + dx, y0, z0 + dz);
+                const p111 = iso(x0 + dx, y0 + dy, z0 + dz);
+                const p011 = iso(x0, y0 + dy, z0 + dz);
+
+                // Left-front face (+Y face)
+                ctx.beginPath();
+                ctx.moveTo(p010.x, p010.y);
+                ctx.lineTo(p110.x, p110.y);
+                ctx.lineTo(p111.x, p111.y);
+                ctx.lineTo(p011.x, p011.y);
+                ctx.closePath();
+                ctx.fillStyle = colors.left;
+                ctx.fill();
+                if (strokeColor) {
+                    ctx.strokeStyle = strokeColor;
+                    ctx.lineWidth = lineWidth;
+                    ctx.stroke();
+                }
+
+                // Right-front face (+X face, facing DOOR)
+                ctx.beginPath();
+                ctx.moveTo(p100.x, p100.y);
+                ctx.lineTo(p110.x, p110.y);
+                ctx.lineTo(p111.x, p111.y);
+                ctx.lineTo(p101.x, p101.y);
+                ctx.closePath();
+                ctx.fillStyle = colors.right;
+                ctx.fill();
+                if (strokeColor) {
+                    ctx.strokeStyle = strokeColor;
+                    ctx.lineWidth = lineWidth;
+                    ctx.stroke();
+                }
+
+                // Top face (+Z face)
+                ctx.beginPath();
+                ctx.moveTo(p001.x, p001.y);
+                ctx.lineTo(p101.x, p101.y);
+                ctx.lineTo(p111.x, p111.y);
+                ctx.lineTo(p011.x, p011.y);
+                ctx.closePath();
+                ctx.fillStyle = colors.top;
+                ctx.fill();
+                if (strokeColor) {
+                    ctx.strokeStyle = strokeColor;
+                    ctx.lineWidth = lineWidth;
+                    ctx.stroke();
+                }
+
+                // Optional Jumbo Bag lifting loops / strapping details
+                if (colors.hasStraps) {
+                    ctx.strokeStyle = '#1B4332';
+                    ctx.lineWidth = 1.4;
+                    const s1a = iso(x0 + dx * 0.25, y0, z0 + dz);
+                    const s1b = iso(x0 + dx * 0.25, y0 + dy, z0 + dz);
+                    const s2a = iso(x0 + dx * 0.75, y0, z0 + dz);
+                    const s2b = iso(x0 + dx * 0.75, y0 + dy, z0 + dz);
+                    ctx.beginPath();
+                    ctx.moveTo(s1a.x, s1a.y); ctx.lineTo(s1b.x, s1b.y);
+                    ctx.moveTo(s2a.x, s2a.y); ctx.lineTo(s2b.x, s2b.y);
+                    ctx.stroke();
+                }
+            }
+
+            // 1. Ground Drop Shadow beneath Container
+            const sh0 = iso(-0.15, -0.15, -0.05);
+            const sh1 = iso(L + 0.25, -0.15, -0.05);
+            const sh2 = iso(L + 0.25, Wd + 0.25, -0.05);
+            const sh3 = iso(-0.15, Wd + 0.25, -0.05);
+            ctx.beginPath();
+            ctx.moveTo(sh0.x, sh0.y);
+            ctx.lineTo(sh1.x, sh1.y);
+            ctx.lineTo(sh2.x, sh2.y);
+            ctx.lineTo(sh3.x, sh3.y);
+            ctx.closePath();
+            ctx.fillStyle = 'rgba(17, 17, 17, 0.08)';
+            ctx.fill();
+
+            // 2. Container Back Walls & Floor (Translucent Shell)
+            const c000 = iso(0, 0, 0), c100 = iso(L, 0, 0), c110 = iso(L, Wd, 0), c010 = iso(0, Wd, 0);
+            const c001 = iso(0, 0, Ht), c101 = iso(L, 0, Ht), c111 = iso(L, Wd, Ht), c011 = iso(0, Wd, Ht);
+
+            // Container Floor (Hardwood Marine Ply)
+            ctx.beginPath();
+            ctx.moveTo(c000.x, c000.y);
+            ctx.lineTo(c100.x, c100.y);
+            ctx.lineTo(c110.x, c110.y);
+            ctx.lineTo(c010.x, c010.y);
+            ctx.closePath();
+            ctx.fillStyle = '#DCD9D0';
+            ctx.fill();
+
+            // Floor cross-plank lines
+            ctx.strokeStyle = 'rgba(0,0,0,0.08)';
+            ctx.lineWidth = 1;
+            const steps = is40 ? 20 : 10;
+            for (let i = 1; i < steps; i++) {
+                const fx = (L / steps) * i;
+                const fa = iso(fx, 0, 0);
+                const fb = iso(fx, Wd, 0);
+                ctx.beginPath();
+                ctx.moveTo(fa.x, fa.y);
+                ctx.lineTo(fb.x, fb.y);
+                ctx.stroke();
+            }
+
+            // Rear Bulkhead Wall (x = 0)
+            ctx.beginPath();
+            ctx.moveTo(c000.x, c000.y);
+            ctx.lineTo(c010.x, c010.y);
+            ctx.lineTo(c011.x, c011.y);
+            ctx.lineTo(c001.x, c001.y);
+            ctx.closePath();
+            ctx.fillStyle = 'rgba(27, 67, 50, 0.14)';
+            ctx.fill();
+
+            // Far Side Wall (y = 0)
+            ctx.beginPath();
+            ctx.moveTo(c000.x, c000.y);
+            ctx.lineTo(c100.x, c100.y);
+            ctx.lineTo(c101.x, c101.y);
+            ctx.lineTo(c001.x, c001.y);
+            ctx.closePath();
+            ctx.fillStyle = 'rgba(27, 67, 50, 0.09)';
+            ctx.fill();
+
+            // Vertical steel corrugations on far wall
+            ctx.strokeStyle = 'rgba(27, 67, 50, 0.12)';
+            for (let i = 1; i < steps * 2; i++) {
+                const cx = (L / (steps * 2)) * i;
+                const ca = iso(cx, 0, 0);
+                const cb = iso(cx, 0, Ht);
+                ctx.beginPath();
+                ctx.moveTo(ca.x, ca.y);
+                ctx.lineTo(cb.x, cb.y);
+                ctx.stroke();
+            }
+
+            // 3. Render Cargo Units Sequentially (Back-to-Front Painter's Order)
+            const totalUnits = cfg.cols * cfg.rows * cfg.tiers;
+            const exactUnits = (simState.progress / 100) * totalUnits;
+
+            const margin = cfg.isBulk ? 0.02 : 0.08;
+            const gap = cfg.isBulk ? 0.01 : 0.05;
+            const unitW = (L - margin * 2 - gap * (cfg.cols - 1)) / cfg.cols;
+            const unitD = (Wd - margin * 2 - gap * (cfg.rows - 1)) / cfg.rows;
+            const totalCargoH = Ht * (cfg.isBulk ? 0.88 : 0.82);
+            const unitH = (totalCargoH - gap * (cfg.tiers - 1)) / cfg.tiers;
+
+            let unitIndex = 0;
+            // Draw from col 0 (rear wall) -> col N-1 (front door)
+            // Within each col: row 0 (far wall) -> row 1 (near wall)
+            // Within each stack: tier 0 (bottom) -> tier 1 (top)
+            for (let c = 0; c < cfg.cols; c++) {
+                for (let r = 0; r < cfg.rows; r++) {
+                    for (let t = 0; t < cfg.tiers; t++) {
+                        if (unitIndex < exactUnits) {
+                            // Smooth slide-in interpolation for the currently loading unit
+                            const unitFrac = Math.min(1, exactUnits - unitIndex);
+                            const ease = 1 - Math.pow(1 - unitFrac, 3); // Cubic ease-out
+
+                            const targetX = margin + c * (unitW + gap);
+                            const startX = L + 0.6; // Slides in from the open DOOR
+                            const curX = startX + (targetX - startX) * ease;
+                            const curY = margin + r * (unitD + gap);
+                            const curZ = t * (unitH + gap);
+
+                            // If Palletized mode, draw wooden ISPM-15 pallet base first
+                            if (cfg.hasPalletBase && t === 0) {
+                                const palletH = unitH * 0.14;
+                                drawIsoBox(
+                                    curX, curY, curZ,
+                                    unitW, unitD, palletH,
+                                    { top: '#C49A6C', left: '#9E7447', right: '#7D5832' },
+                                    'rgba(0,0,0,0.2)', 0.7
+                                );
+                                drawIsoBox(
+                                    curX + 0.01, curY + 0.01, curZ + palletH,
+                                    unitW - 0.02, unitD - 0.02, unitH - palletH,
+                                    { top: cfg.colorTop, left: cfg.colorLeft, right: cfg.colorRight },
+                                    'rgba(0,0,0,0.16)', 0.75
+                                );
+                            } else {
+                                drawIsoBox(
+                                    curX, curY, curZ,
+                                    unitW, unitD, unitH,
+                                    {
+                                        top: cfg.colorTop,
+                                        left: cfg.colorLeft,
+                                        right: cfg.colorRight,
+                                        hasStraps: cfg.hasStraps
+                                    },
+                                    cfg.isBulk ? 'rgba(99,72,43,0.25)' : 'rgba(0,0,0,0.18)',
+                                    0.8
+                                );
+                            }
+                        }
+                        unitIndex++;
+                    }
+                }
+            }
+
+            // 4. Container Front Translucent Frame & Structural Steel Rails
+            ctx.strokeStyle = '#1B4332';
+            ctx.lineWidth = 1.6;
+
+            // Bottom & Top Perimeter Frame
+            const edges = [
+                [c000, c100], [c100, c110], [c110, c010], [c010, c000],
+                [c001, c101], [c101, c111], [c111, c011], [c011, c001],
+                [c000, c001], [c100, c101], [c110, c111], [c010, c011]
+            ];
+            edges.forEach(([a, b]) => {
+                ctx.beginPath();
+                ctx.moveTo(a.x, a.y);
+                ctx.lineTo(b.x, b.y);
+                ctx.stroke();
+            });
+
+            // Subtle glass highlight on near wall (+Y)
+            ctx.beginPath();
+            ctx.moveTo(c010.x, c010.y);
+            ctx.lineTo(c110.x, c110.y);
+            ctx.lineTo(c111.x, c111.y);
+            ctx.lineTo(c011.x, c011.y);
+            ctx.closePath();
+            ctx.fillStyle = 'rgba(255, 255, 255, 0.08)';
+            ctx.fill();
+
+            // 5. Open Container Doors & "DOOR" Badge at Front-Right (+X end)
+            // Left swinging door leaf
+            const dLeftTip = iso(L + 0.55, -0.35, 0);
+            const dLeftTop = iso(L + 0.55, -0.35, Ht);
+            ctx.beginPath();
+            ctx.moveTo(c100.x, c100.y);
+            ctx.lineTo(dLeftTip.x, dLeftTip.y);
+            ctx.lineTo(dLeftTop.x, dLeftTop.y);
+            ctx.lineTo(c101.x, c101.y);
+            ctx.closePath();
+            ctx.fillStyle = 'rgba(27, 67, 50, 0.22)';
+            ctx.fill();
+            ctx.strokeStyle = '#1B4332';
+            ctx.lineWidth = 1.4;
+            ctx.stroke();
+
+            // Right swinging door leaf
+            const dRightTip = iso(L + 0.55, Wd + 0.35, 0);
+            const dRightTop = iso(L + 0.55, Wd + 0.35, Ht);
+            ctx.beginPath();
+            ctx.moveTo(c110.x, c110.y);
+            ctx.lineTo(dRightTip.x, dRightTip.y);
+            ctx.lineTo(dRightTop.x, dRightTop.y);
+            ctx.lineTo(c111.x, c111.y);
+            ctx.closePath();
+            ctx.fillStyle = 'rgba(27, 67, 50, 0.28)';
+            ctx.fill();
+            ctx.stroke();
+
+            // "DOOR" Pill Tag near front-right threshold
+            const doorBadgePos = iso(L + 0.35, Wd * 0.5, -0.22);
+            const badgeW = 54;
+            const badgeH = 22;
+            ctx.fillStyle = '#FFFFFF';
+            ctx.strokeStyle = 'rgba(0,0,0,0.15)';
+            ctx.lineWidth = 1;
+            ctx.beginPath();
+            ctx.roundRect(doorBadgePos.x - badgeW / 2, doorBadgePos.y - badgeH / 2, badgeW, badgeH, 11);
+            ctx.fill();
+            ctx.stroke();
+
+            ctx.fillStyle = '#111111';
+            ctx.font = '800 10px Inter, sans-serif';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillText('DOOR', doorBadgePos.x, doorBadgePos.y + 0.5);
+        }
+
+        // =========================================================================
+        // 5. MODAL & FORM HANDLERS
+        // =========================================================================
+        function toggleMobileMenu() {
+            document.getElementById('mobileMenu').classList.toggle('hidden');
+        }
+
+        function openPdfModal() {
+            document.getElementById('pdfModal').classList.remove('hidden');
+        }
+
+        function closePdfModal() {
+            document.getElementById('pdfModal').classList.add('hidden');
+        }
+
+        function handleQuoteSubmit(e) {
+            e.preventDefault();
+            const vol = document.getElementById('rfqVolume').value;
+            const incoterm = document.getElementById('rfqIncoterm').value;
+            const port = document.getElementById('rfqPort').value;
+            const email = document.getElementById('rfqEmail').value;
+
+            document.getElementById('confirmVolume').innerText = Number(vol).toLocaleString() + ' MT';
+            document.getElementById('confirmIncoterm').innerText = incoterm;
+            document.getElementById('confirmPort').innerText = port;
+            document.getElementById('confirmEmail').innerText = email;
+
+            const alertBox = document.getElementById('quoteSuccessAlert');
+            alertBox.classList.remove('hidden');
+            alertBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+
+        // =========================================================================
+        // 6. INITIALIZATION ON WINDOW LOAD
+        // =========================================================================
+        window.onload = function() {
+            renderSpecs('A1');
+            updateCalc();
+            updateSimMetadata();
+            resizeStuffingCanvas();
+            drawStuffingScene();
+
+            document.getElementById('mobileMenuBtn').addEventListener('click', toggleMobileMenu);
+
+            document.getElementById('pdfModal').addEventListener('click', function(e) {
+                if (e.target === this) closePdfModal();
+            });
+
+            window.addEventListener('resize', () => {
+                resizeStuffingCanvas();
+                drawStuffingScene();
+            });
+        };
+    </script>
+</body>
+</html>

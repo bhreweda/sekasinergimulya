@@ -1,0 +1,10 @@
+seka-synergy/
+├── index.html
+└── assets/
+    ├── images/
+    │   ├── 54527.jpg    <-- Foto gudang jumbo bag tumpuk
+    │   ├── 54528.jpg    <-- Foto close-up wood pellet di tangan
+    │   ├── 54529.jpg    <-- Foto gudang jumbo bag Apical
+    │   └── 54530.jpg    <-- Foto lantai produksi & silo pabrik
+    └── docs/
+        └── Seka_Sinergi_Wood_Pellet_Spec_2026.pdf   <-- File PDF asli spesifikasi Anda
