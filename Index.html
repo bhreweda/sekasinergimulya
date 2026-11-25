@@ -4,22 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- SEO Metadata for Global & Domestic Buyers -->
-    <title>Seka Synergy | PT Seka Sinergi Mulya — Indonesian Wood Pellet Manufacturer &amp; Global Biomass Exporter</title>
-    <meta name="description" content="PT Seka Sinergi Mulya (Seka Synergy) is a leading Indonesian wood pellet manufacturer and exporter in Central Java supplying high-calorific, low-ash SVLK &amp; ISO 17225-2 certified wood pellets for power plants and industrial boilers across Asia and Europe.">
+    <!-- SEO UTAMA UNTUK BUYER INTERNASIONAL & LOKAL -->
+    <title>Seka Synergy | PT Seka Sinergi Mulya — Indonesian Wood Pellet Manufacturer & Global Biomass Exporter</title>
+    <meta name="description" content="PT Seka Sinergi Mulya (Seka Synergy) is a leading Indonesian wood pellet manufacturer and exporter supplying high-calorific, low-ash SVLK & ISO 17225-2 certified wood pellets for power plants and industrial boilers across Asia and Europe.">
     <meta name="keywords" content="Indonesian wood pellet manufacturer, wood pellet exporter Indonesia, biomass supplier Asia Europe, buy wood pellets bulk FOB CIF, SVLK certified wood pellets, industrial wood pellet factory Indonesia, PT Seka Sinergi Mulya, Seka Synergy">
     <meta name="robots" content="index, follow">
     <meta name="author" content="PT Seka Sinergi Mulya">
     <link rel="canonical" href="https://sekasinergi.com/">
 
-    <!-- Open Graph Metadata -->
+    <!-- OPEN GRAPH (LINKEDIN / WHATSAPP / GOOGLE PREVIEW) -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Seka Synergy | Indonesian Wood Pellet Manufacturer &amp; Exporter">
-    <meta property="og:description" content="High-calorific Indonesian wood pellets (4,600–4,850 kcal/kg, low ash ≤1.2%). Monthly capacity 15,000 MT. Ready for FOB &amp; CIF export to Japan, South Korea, and Europe.">
+    <meta property="og:title" content="Seka Synergy | Indonesian Wood Pellet Manufacturer & Exporter">
+    <meta property="og:description" content="High-calorific Indonesian wood pellets (4,600–4,850 kcal/kg, low ash ≤1.2%). Monthly capacity 15,000 MT. Ready for FOB & CIF export to Japan, South Korea, and Europe.">
     <meta property="og:image" content="assets/images/54528_2.jpg">
     <meta property="og:url" content="https://sekasinergi.com/">
 
-    <!-- Structured Data Schema.org -->
+    <!-- STRUCTURED DATA SCHEMA.ORG -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -51,12 +51,11 @@
     }
     </script>
 
-    <!-- Google Fonts: Plus Jakarta Sans -->
+    <!-- GOOGLE FONTS: PLUS JAKARTA SANS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     
-    <!-- Tailwind CSS & Font Awesome -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
@@ -65,15 +64,13 @@
             theme: {
                 extend: {
                     fontFamily: {
-                        display: ['"Plus Jakarta Sans"', 'sans-serif'],
-                        heading: ['"Plus Jakarta Sans"', 'sans-serif'],
                         sans: ['"Plus Jakarta Sans"', 'sans-serif'],
                     },
                     colors: {
                         editorial: '#F5F5F0',
                         charcoal: '#111111',
                         forest: '#1B4332',
-                        forestDark: '#122E22',
+                        forestLight: '#2D6A4F',
                         timber: '#8B5A2B',
                         sage: '#E8ECE6'
                     }
@@ -88,26 +85,19 @@
             font-family: 'Plus Jakarta Sans', sans-serif;
             scroll-behavior: smooth;
         }
-        h1, .font-display {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            letter-spacing: -0.02em;
-        }
-        h2, h3, h4, .font-heading {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-        }
         .pill-active {
             background-color: #111111 !important;
             color: #FFFFFF !important;
         }
         .view-section {
             display: none;
-            animation: fadeIn 0.25s ease-out;
+            animation: fadeIn 0.3s ease-out;
         }
         .view-section.active {
             display: block;
         }
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(6px); }
+            from { opacity: 0; transform: translateY(8px); }
             to { opacity: 1; transform: translateY(0); }
         }
         input[type=range] {
@@ -115,15 +105,15 @@
         }
     </style>
 </head>
-<body class="antialiased selection:bg-forest selection:text-white flex flex-col min-h-screen justify-between">
+<body class="antialiased selection:bg-forest selection:text-white">
 
-    <!-- MINIMALIST HEADER -->
+    <!-- HEADER UTAMA -->
     <header class="sticky top-0 z-40 bg-editorial/95 backdrop-blur-md py-4 px-4 md:px-10 border-b border-black/5">
         <div class="max-w-7xl mx-auto flex items-center justify-between gap-4">
             <!-- Brand Logo -->
-            <a href="#beranda" onclick="navigate('beranda'); return false;" class="flex items-center gap-3 group">
-                <div class="w-10 h-10 rounded-full bg-forest text-white flex items-center justify-center transition group-hover:bg-charcoal">
-                    <i class="fa-solid fa-seedling text-base text-white"></i>
+            <a href="#beranda" onclick="navigate('beranda')" class="flex items-center gap-3 group">
+                <div class="w-11 h-11 rounded-full bg-forest text-white flex items-center justify-center shadow-sm group-hover:bg-charcoal transition">
+                    <i class="fa-solid fa-seedling text-base"></i>
                 </div>
                 <div>
                     <span class="font-extrabold text-xl tracking-tight block leading-none text-charcoal">Seka Synergy</span>
@@ -131,136 +121,131 @@
                 </div>
             </a>
 
-            <!-- Desktop Pill Navigation -->
-            <nav aria-label="Navigasi Utama" class="hidden lg:flex items-center gap-1 bg-white/80 p-1 rounded-full border border-black/5">
+            <!-- Desktop Pill Menu -->
+            <nav class="hidden lg:flex items-center gap-1 bg-white/80 p-1.5 rounded-full border border-black/5 shadow-sm">
                 <button onclick="navigate('beranda')" id="nav-beranda" class="nav-pill pill-active px-5 py-2 rounded-full text-sm font-semibold transition">Beranda</button>
-                <button onclick="navigate('produk')" id="nav-produk" class="nav-pill px-5 py-2 rounded-full text-sm font-semibold text-charcoal hover:bg-black/5 transition">Produk</button>
-                <button onclick="navigate('artikel')" id="nav-artikel" class="nav-pill px-5 py-2 rounded-full text-sm font-semibold text-charcoal hover:bg-black/5 transition">Artikel</button>
-                <button onclick="navigate('ekspor')" id="nav-ekspor" class="nav-pill px-5 py-2 rounded-full text-sm font-semibold text-charcoal hover:bg-black/5 transition">Ekspor</button>
-                <button onclick="navigate('galeri')" id="nav-galeri" class="nav-pill px-5 py-2 rounded-full text-sm font-semibold text-charcoal hover:bg-black/5 transition">Galeri</button>
-                <button onclick="navigate('kontak')" id="nav-kontak" class="nav-pill px-5 py-2 rounded-full text-sm font-semibold text-charcoal hover:bg-black/5 transition">Kontak</button>
+                <button onclick="navigate('produk')" id="nav-produk" class="nav-pill px-5 py-2 rounded-full text-sm font-semibold text-gray-700 hover:bg-black/5 transition">Produk</button>
+                <button onclick="navigate('artikel')" id="nav-artikel" class="nav-pill px-5 py-2 rounded-full text-sm font-semibold text-gray-700 hover:bg-black/5 transition">Artikel</button>
+                <button onclick="navigate('ekspor')" id="nav-ekspor" class="nav-pill px-5 py-2 rounded-full text-sm font-semibold text-gray-700 hover:bg-black/5 transition">Ekspor</button>
+                <button onclick="navigate('galeri')" id="nav-galeri" class="nav-pill px-5 py-2 rounded-full text-sm font-semibold text-gray-700 hover:bg-black/5 transition">Galeri</button>
+                <button onclick="navigate('kontak')" id="nav-kontak" class="nav-pill px-5 py-2 rounded-full text-sm font-semibold text-gray-700 hover:bg-black/5 transition">Kontak</button>
             </nav>
 
-            <!-- Mobile Menu Button -->
-            <button onclick="toggleMobileMenu()" aria-label="Buka Menu" class="lg:hidden w-10 h-10 rounded-full bg-white text-charcoal border border-black/10 hover:bg-forest hover:text-white flex items-center justify-center transition">
-                <i class="fa-solid fa-bars text-base"></i>
+            <!-- Tombol Hamburger Mobile -->
+            <button onclick="toggleMobileMenu()" aria-label="Buka Menu" class="lg:hidden w-11 h-11 rounded-full bg-white border border-black/10 hover:bg-black/5 flex items-center justify-center text-charcoal transition">
+                <i class="fa-solid fa-bars text-lg"></i>
             </button>
         </div>
 
         <!-- Mobile Menu Drawer -->
-        <div id="mobile-menu" class="hidden lg:hidden mt-3 bg-white rounded-3xl p-6 border border-black/5 shadow-lg">
-            <div class="flex flex-col space-y-3">
-                <button onclick="navigate('beranda'); toggleMobileMenu()" class="text-left text-lg font-bold text-charcoal hover:text-forest py-1 transition">Beranda</button>
-                <button onclick="navigate('produk'); toggleMobileMenu()" class="text-left text-lg font-bold text-charcoal hover:text-forest py-1 transition">Produk</button>
-                <button onclick="navigate('artikel'); toggleMobileMenu()" class="text-left text-lg font-bold text-charcoal hover:text-forest py-1 transition">Artikel</button>
-                <button onclick="navigate('ekspor'); toggleMobileMenu()" class="text-left text-lg font-bold text-charcoal hover:text-forest py-1 transition">Ekspor</button>
-                <button onclick="navigate('galeri'); toggleMobileMenu()" class="text-left text-lg font-bold text-charcoal hover:text-forest py-1 transition">Galeri</button>
-                <button onclick="navigate('kontak'); toggleMobileMenu()" class="text-left text-lg font-bold text-charcoal hover:text-forest py-1 transition">Kontak</button>
+        <div id="mobile-menu" class="hidden lg:hidden mt-3 bg-white rounded-3xl p-6 shadow-xl border border-black/10">
+            <div class="flex flex-col space-y-4">
+                <button onclick="navigate('beranda'); toggleMobileMenu()" class="text-left text-xl font-bold text-charcoal hover:text-forest transition">Beranda</button>
+                <button onclick="navigate('produk'); toggleMobileMenu()" class="text-left text-xl font-bold text-charcoal hover:text-forest transition">Produk</button>
+                <button onclick="navigate('artikel'); toggleMobileMenu()" class="text-left text-xl font-bold text-charcoal hover:text-forest transition">Artikel</button>
+                <button onclick="navigate('ekspor'); toggleMobileMenu()" class="text-left text-xl font-bold text-charcoal hover:text-forest transition">Ekspor</button>
+                <button onclick="navigate('galeri'); toggleMobileMenu()" class="text-left text-xl font-bold text-charcoal hover:text-forest transition">Galeri</button>
+                <button onclick="navigate('kontak'); toggleMobileMenu()" class="text-left text-xl font-bold text-charcoal hover:text-forest transition">Kontak</button>
             </div>
         </div>
     </header>
 
     <!-- MAIN CONTENT CONTAINER -->
-    <main class="max-w-7xl mx-auto w-full px-4 md:px-10 py-8 md:py-12 flex-grow">
+    <main class="max-w-7xl mx-auto px-4 md:px-10 py-8 md:py-12">
 
         <!-- ==================== 1. BERANDA ==================== -->
         <section id="view-beranda" class="view-section active">
-            <!-- Clean Hero Section -->
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center mb-12 bg-white rounded-3xl p-6 sm:p-10 lg:p-12 border border-black/5">
-                <!-- Product Image Column -->
-                <div class="lg:col-span-5">
-                    <div onclick="openLightbox('54528_2.jpg', 'Wood Pellet 6mm–8mm Kualitas Ekspor — PT Seka Sinergi Mulya')" class="cursor-pointer relative w-full h-64 sm:h-80 rounded-2xl overflow-hidden bg-editorial group">
-                        <img src="assets/images/54528_2.jpg" 
-                             data-img="54528_2.jpg"
-                             onerror="handleImgFallback(this, 'Seka+Synergy+Wood+Pellets')"
-                             alt="Wood Pellet Indonesia PT Seka Sinergi Mulya" 
-                             class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                        <span class="absolute bottom-3 right-3 bg-charcoal/80 backdrop-blur-sm text-white text-[11px] font-bold px-3 py-1.5 rounded-full">
-                            <i class="fa-solid fa-magnifying-glass-plus mr-1"></i> Perbesar Foto
-                        </span>
+            <!-- Hero Section dengan Teks Perkenalan Perusahaan & SEO Global -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center mb-14 bg-white rounded-[2.25rem] p-6 sm:p-10 lg:p-12 border border-black/5 shadow-sm">
+                <!-- Kolom Visual Produk (54528_2.jpg) -->
+                <div class="lg:col-span-5 flex flex-col items-center">
+                    <div class="relative w-full max-w-sm pt-6">
+                        <div class="border-t-2 border-x-2 border-forest/40 rounded-t-3xl pt-8 pb-4 px-5 bg-gradient-to-b from-sage/60 to-white flex flex-col items-center">
+                            <div class="w-14 h-14 rounded-full bg-forest text-white shadow-md flex items-center justify-center -mt-14 mb-4">
+                                <i class="fa-solid fa-seedling text-xl"></i>
+                            </div>
+                            <div onclick="openLightbox('54528_2.jpg', 'Kualitas Fisik Wood Pellet PT Seka Sinergi Mulya (6mm–8mm)')" class="cursor-pointer w-full h-56 sm:h-64 rounded-2xl overflow-hidden shadow-sm group relative">
+                                <img src="assets/images/54528_2.jpg" data-filename="54528_2.jpg" onerror="handleImgFallback(this)" alt="Wood Pellet Indonesia PT Seka Sinergi Mulya" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                                <span class="absolute bottom-3 right-3 bg-black/65 text-white text-[10px] font-semibold px-2.5 py-1 rounded-full backdrop-blur-sm">
+                                    <i class="fa-solid fa-magnifying-glass-plus mr-1"></i> Perbesar
+                                </span>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Introduction Text Column -->
+                <!-- Kolom Teks Perkenalan Perusahaan -->
                 <div class="lg:col-span-7 space-y-5">
-                    <h1 class="text-3xl sm:text-5xl font-extrabold text-charcoal leading-[1.1]">
+                    <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-charcoal leading-[1.12]">
                         Indonesian Sustainable <span class="text-forest">Wood Pellet</span> Manufacturer
                     </h1>
 
-                    <p class="text-lg sm:text-xl font-bold text-forest leading-relaxed">
+                    <p class="text-lg font-bold text-forest leading-relaxed">
                         PT Seka Sinergi Mulya (Seka Synergy) adalah Produsen dan Pabrik Wood Pellet Indonesia yang berlokasi di Jawa Tengah dengan pengalaman bertahun-tahun di Industri Agrikultur dan Biomassa.
                     </p>
 
-                    <p class="text-gray-600 text-base leading-relaxed">
+                    <p class="text-gray-700 text-base leading-relaxed">
                         Dengan kapasitas produksi ribuan ton per bulan dan mesin produksi yang lengkap, kami menyediakan wood pellet berkualitas tinggi berstandar internasional (ISO 17225-2 &amp; SVLK), didukung oleh fasilitas pabrik terintegrasi untuk menjamin <strong>Kualitas Produk</strong> dan <strong>Konsistensi Supply Ekspor</strong> bagi pembangkit listrik dan industri di Asia maupun Eropa.
                     </p>
 
                     <div class="pt-2 flex flex-wrap items-center gap-3">
-                        <button onclick="navigate('produk')" class="bg-forest hover:bg-charcoal text-white font-bold px-7 py-3.5 rounded-full text-sm transition">
+                        <button onclick="navigate('produk')" class="bg-forest hover:bg-charcoal text-white font-bold px-7 py-3.5 rounded-full text-sm transition shadow-sm">
                             Lebih Lanjut
                         </button>
-                        <button onclick="navigate('kontak')" class="bg-editorial hover:bg-sage text-charcoal font-bold px-7 py-3.5 rounded-full text-sm transition">
+                        <button onclick="navigate('kontak')" class="bg-editorial hover:bg-sage text-charcoal border border-black/10 font-bold px-7 py-3.5 rounded-full text-sm transition">
                             Request Quote (FOB / CIF)
                         </button>
                     </div>
                 </div>
             </div>
 
-            <!-- 3 Highlight Cards: Sage, Forest Green, Warm Timber -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-                <div class="bg-sage rounded-3xl p-7 text-charcoal flex flex-col justify-between">
+            <!-- 3 Pilar Keunggulan -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-14">
+                <div class="bg-white rounded-[2rem] p-7 border border-black/5 flex flex-col justify-between">
                     <div>
-                        <span class="text-xs font-bold uppercase tracking-wider text-forest">High Calorific Output</span>
-                        <h3 class="text-2xl font-extrabold mt-1 mb-2">4.600 – 4.850 kcal/kg</h3>
-                        <p class="text-sm text-gray-700">Nilai kalori tinggi dengan kadar air rendah (&le; 8,5%) untuk efisiensi pembakaran boiler industri &amp; co-firing PLTU.</p>
+                        <span class="text-xs font-bold uppercase tracking-wider text-timber">High Calorific Output</span>
+                        <h3 class="text-2xl font-extrabold text-charcoal mt-2 mb-2">4.600 – 4.850 kcal/kg</h3>
+                        <p class="text-sm text-gray-600 leading-relaxed">Nilai kalori tinggi dengan kadar air rendah (&le; 8,5%) untuk efisiensi pembakaran boiler industri &amp; co-firing PLTU.</p>
                     </div>
-                    <button onclick="navigate('produk')" class="mt-6 text-left font-bold text-sm text-forest hover:underline">Lihat Spesifikasi Lab →</button>
+                    <button onclick="navigate('produk')" class="mt-5 text-left font-bold text-xs text-forest hover:underline">Lihat Spesifikasi Lab →</button>
                 </div>
 
-                <div class="bg-forest rounded-3xl p-7 text-white flex flex-col justify-between">
+                <div class="bg-forest rounded-[2rem] p-7 text-white flex flex-col justify-between">
                     <div>
                         <span class="text-xs font-bold uppercase tracking-wider text-emerald-300">Industrial Scale</span>
-                        <h3 class="text-2xl font-extrabold mt-1 mb-2">15.000 MT / Bulan</h3>
-                        <p class="text-sm text-white/85">Didukung lini pengeringan drum putar, hammer mill, dan gudang tertutup untuk menjamin kelancaran pasokan ekspor.</p>
+                        <h3 class="text-2xl font-extrabold mt-2 mb-2">15.000 MT / Bulan</h3>
+                        <p class="text-sm text-white/85 leading-relaxed">Didukung lini pengeringan drum putar, hammer mill, dan gudang tertutup untuk menjamin kelancaran pasokan ekspor.</p>
                     </div>
-                    <button onclick="navigate('galeri')" class="mt-6 text-left font-bold text-sm text-emerald-300 hover:underline">Lihat Fasilitas Pabrik →</button>
+                    <button onclick="navigate('galeri')" class="mt-5 text-left font-bold text-xs text-emerald-200 hover:underline">Lihat Fasilitas Pabrik →</button>
                 </div>
 
-                <div class="bg-white rounded-3xl p-7 text-charcoal border border-black/5 flex flex-col justify-between">
+                <div class="bg-sage rounded-[2rem] p-7 border border-forest/10 flex flex-col justify-between">
                     <div>
-                        <span class="text-xs font-bold uppercase tracking-wider text-timber">Global Shipping</span>
-                        <h3 class="text-2xl font-extrabold mt-1 mb-2">FOB &amp; CIF Export</h3>
-                        <p class="text-sm text-gray-600">Pengiriman kontainer 20ft/40ft HC (Jumbo Bag, Karung Palet, atau Curah) dari pelabuhan utama Indonesia.</p>
+                        <span class="text-xs font-bold uppercase tracking-wider text-forest">Global Shipping</span>
+                        <h3 class="text-2xl font-extrabold text-charcoal mt-2 mb-2">FOB &amp; CIF Export</h3>
+                        <p class="text-sm text-gray-700 leading-relaxed">Pengiriman kontainer 20ft/40ft HC (Jumbo Bag, Karung Palet, atau Curah) dari pelabuhan utama Indonesia.</p>
                     </div>
-                    <button onclick="navigate('ekspor')" class="mt-6 text-left font-bold text-sm text-timber hover:underline">Simulasi Stuffing 3D →</button>
+                    <button onclick="navigate('ekspor')" class="mt-5 text-left font-bold text-xs text-forest hover:underline">Simulasi Stuffing 3D →</button>
                 </div>
             </div>
 
-            <!-- 2 Facility Preview Cards -->
+            <!-- Sorotan Dokumentasi Pabrik & Gudang (54530_2.jpg & 54529_2.jpg) -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div onclick="navigate('galeri')" class="cursor-pointer relative rounded-3xl overflow-hidden h-72 group">
-                    <img src="assets/images/54530_2.jpg" 
-                         data-img="54530_2.jpg"
-                         onerror="handleImgFallback(this, 'Fasilitas+Produksi+Wood+Pellet')"
-                         alt="Mesin Produksi Wood Pellet PT Seka Sinergi Mulya" 
-                         class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/15 to-transparent"></div>
+                <div onclick="navigate('galeri')" class="cursor-pointer relative rounded-[2rem] overflow-hidden h-80 group border border-black/5">
+                    <img src="assets/images/54530_2.jpg" data-filename="54530_2.jpg" onerror="handleImgFallback(this)" alt="Mesin Produksi Wood Pellet PT Seka Sinergi Mulya" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
                     <div class="absolute bottom-6 left-6 right-6 text-white">
-                        <span class="text-xs font-bold uppercase tracking-wider text-amber-300">Fasilitas Produksi</span>
+                        <span class="text-xs font-bold uppercase tracking-wider text-emerald-300">Fasilitas Produksi</span>
                         <h3 class="text-xl font-bold mt-1">Mesin Produksi Terintegrasi &amp; Kapasitas Besar</h3>
                     </div>
                 </div>
 
-                <div onclick="navigate('ekspor')" class="cursor-pointer relative rounded-3xl overflow-hidden h-72 group">
-                    <img src="assets/images/54529_2.jpg" 
-                         data-img="54529_2.jpg"
-                         onerror="handleImgFallback(this, 'Gudang+Ekspor+Jumbo+Bag')"
-                         alt="Gudang Stok Ekspor Jumbo Bag Wood Pellet" 
-                         class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/15 to-transparent"></div>
+                <div onclick="navigate('ekspor')" class="cursor-pointer relative rounded-[2rem] overflow-hidden h-80 group border border-black/5">
+                    <img src="assets/images/54529_2.jpg" data-filename="54529_2.jpg" onerror="handleImgFallback(this)" alt="Gudang Stok Ekspor Jumbo Bag Wood Pellet" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
                     <div class="absolute bottom-6 left-6 right-6 text-white">
-                        <span class="text-xs font-bold uppercase tracking-wider text-emerald-300">Gudang &amp; Logistik</span>
-                        <h3 class="text-xl font-bold mt-1">Stok Siap Kirim untuk Buyer Asia &amp; Eropa</h3>
+                        <span class="text-xs font-bold uppercase tracking-wider text-amber-300">Gudang &amp; Logistik</span>
+                        <h3 class="text-xl font-bold mt-1">Stok Jumbo Bag Siap Kirim untuk Buyer Asia &amp; Eropa</h3>
                     </div>
                 </div>
             </div>
@@ -269,74 +254,67 @@
         <!-- ==================== 2. PRODUK ==================== -->
         <section id="view-produk" class="view-section">
             <div class="mb-8">
-                <h1 class="text-3xl sm:text-5xl font-extrabold text-charcoal">Wood Pellet Specifications</h1>
+                <span class="text-xs font-bold uppercase tracking-widest text-timber">Spesifikasi Produk</span>
+                <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-charcoal mt-1">Wood Pellet Specifications</h1>
                 <p class="text-gray-600 mt-2 max-w-2xl">Standar mutu internasional ISO 17225-2 dengan inspeksi pra-pengapalan oleh SGS / Sucofindo untuk menjamin kualitas pembakaran.</p>
             </div>
 
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-12">
-                <div class="lg:col-span-7 bg-white rounded-3xl p-6 sm:p-8 border border-black/5">
+                <div class="lg:col-span-7 bg-white rounded-[2rem] p-6 sm:p-8 shadow-sm border border-black/5">
                     <div class="flex flex-wrap items-center justify-between gap-4 mb-6">
                         <div class="inline-flex bg-editorial p-1 rounded-full">
                             <button onclick="switchGrade('industrial')" id="btn-industrial" class="px-5 py-2 rounded-full text-xs font-bold bg-charcoal text-white transition">
                                 Industrial Grade (I1 / I2)
                             </button>
-                            <button onclick="switchGrade('premium')" id="btn-premium" class="px-5 py-2 rounded-full text-xs font-bold text-charcoal transition">
+                            <button onclick="switchGrade('premium')" id="btn-premium" class="px-5 py-2 rounded-full text-xs font-bold text-gray-700 transition">
                                 Premium Grade A1
                             </button>
                         </div>
-                        <span class="text-xs font-bold text-forest bg-sage px-3.5 py-1.5 rounded-full">
-                            <i class="fa-solid fa-flask mr-1"></i> SGS / Sucofindo COA
-                        </span>
                     </div>
 
                     <div class="overflow-x-auto">
                         <table class="w-full text-left border-collapse">
                             <thead>
-                                <tr class="border-b border-gray-200 text-xs uppercase text-gray-500">
+                                <tr class="border-b border-black/10 text-xs uppercase text-gray-500">
                                     <th class="py-3 font-bold">Parameter</th>
                                     <th class="py-3 font-bold">Metode Uji</th>
                                     <th class="py-3 font-bold text-right">Nilai Standar</th>
                                 </tr>
                             </thead>
-                            <tbody id="spec-table-body" class="divide-y divide-gray-100 text-sm"></tbody>
+                            <tbody id="spec-table-body" class="divide-y divide-black/5 text-sm"></tbody>
                         </table>
                     </div>
                 </div>
 
                 <div class="lg:col-span-5 flex flex-col gap-6">
-                    <div onclick="openLightbox('54528_2.jpg', 'Tekstur Padat & Kepadatan Tinggi Wood Pellet 6mm–8mm')" class="cursor-pointer relative rounded-3xl overflow-hidden h-56 group">
-                        <img src="assets/images/54528_2.jpg" 
-                             data-img="54528_2.jpg"
-                             onerror="handleImgFallback(this, 'Wood+Pellet+6mm-8mm')"
-                             alt="Wood Pellet 6mm-8mm Seka Synergy" 
-                             class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                        <div class="absolute bottom-4 left-4 bg-charcoal/85 backdrop-blur-sm text-white px-4 py-1.5 rounded-full text-xs font-bold">
+                    <div onclick="openLightbox('54528_2.jpg', '100% Serat Kayu Murni — Diameter 6mm–8mm')" class="cursor-pointer relative rounded-[2rem] overflow-hidden h-56 shadow-sm group">
+                        <img src="assets/images/54528_2.jpg" data-filename="54528_2.jpg" onerror="handleImgFallback(this)" alt="Wood Pellet 6mm-8mm Seka Synergy" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <div class="absolute bottom-4 left-4 bg-black/75 backdrop-blur-md text-white px-4 py-2 rounded-full text-xs font-semibold">
                             100% Serat Kayu Murni • Tanpa Perekat Kimia
                         </div>
                     </div>
 
-                    <!-- B2B Volume & Energy Estimator -->
-                    <div class="bg-sage rounded-3xl p-6 sm:p-7">
-                        <h3 class="font-bold text-xl text-forest mb-1">Kalkulator Volume &amp; Energi</h3>
+                    <div class="bg-sage rounded-[2rem] p-6 sm:p-7 border border-forest/15">
+                        <h3 class="font-extrabold text-lg text-forest mb-1">Kalkulator Volume &amp; Energi</h3>
                         <p class="text-xs text-gray-600 mb-4">Hitung estimasi kebutuhan kontainer 40ft HC dan output energi termal.</p>
 
-                        <label class="block text-xs font-bold uppercase text-charcoal mb-1">
-                            Volume Pesanan: <span id="calc-mt-label" class="text-forest text-base font-extrabold">500 MT</span>
+                        <label class="block text-xs font-bold uppercase text-gray-700 mb-1">
+                            Volume Pesanan: <span id="calc-mt-label" class="text-forest text-base">500 MT</span>
                         </label>
                         <input type="range" id="calc-mt-slider" min="50" max="5000" step="50" value="500" oninput="updateB2BCalc()" class="w-full mb-4 cursor-pointer">
 
                         <div class="grid grid-cols-3 gap-3 text-center">
                             <div class="bg-white rounded-2xl p-3">
-                                <span class="block text-[11px] text-gray-500 font-bold">40ft HC FCL</span>
-                                <span id="calc-containers" class="text-lg font-extrabold text-charcoal">21</span>
+                                <span class="block text-[11px] text-gray-500 font-semibold">40ft HC FCL</span>
+                                <span id="calc-containers" class="text-lg font-extrabold text-charcoal">20</span>
                             </div>
                             <div class="bg-white rounded-2xl p-3">
-                                <span class="block text-[11px] text-gray-500 font-bold">Total GCal</span>
-                                <span id="calc-gcal" class="text-lg font-extrabold text-forest">2.350</span>
+                                <span class="block text-[11px] text-gray-500 font-semibold">Total GCal</span>
+                                <span id="calc-gcal" class="text-lg font-extrabold text-forest">2,350</span>
                             </div>
                             <div class="bg-white rounded-2xl p-3">
-                                <span class="block text-[11px] text-gray-500 font-bold">Est. MWh</span>
-                                <span id="calc-mwh" class="text-lg font-extrabold text-timber">2.733</span>
+                                <span class="block text-[11px] text-gray-500 font-semibold">Est. MWh</span>
+                                <span id="calc-mwh" class="text-lg font-extrabold text-timber">2,733</span>
                             </div>
                         </div>
                     </div>
@@ -347,63 +325,52 @@
         <!-- ==================== 3. ARTIKEL ==================== -->
         <section id="view-artikel" class="view-section">
             <div class="mb-8">
-                <h1 class="text-3xl sm:text-5xl font-extrabold text-charcoal">Artikel &amp; Wawasan Biomassa</h1>
+                <span class="text-xs font-bold uppercase tracking-widest text-forest">Publikasi &amp; Berita</span>
+                <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-charcoal mt-1">Artikel &amp; Wawasan Biomassa</h1>
                 <p class="text-gray-600 mt-2 max-w-2xl">Edukasi industri energi terbarukan, standar ekspor global, dan keberlanjutan rantai pasok wood pellet Indonesia.</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <article class="bg-white rounded-3xl overflow-hidden border border-black/5 flex flex-col justify-between">
+                <article class="bg-white rounded-[2rem] overflow-hidden border border-black/5 flex flex-col justify-between">
                     <div>
-                        <img src="assets/images/54530_2.jpg" 
-                             data-img="54530_2.jpg"
-                             onerror="handleImgFallback(this, 'Co-Firing+Biomassa')"
-                             alt="Co-firing PLTU" 
-                             class="w-full h-48 object-cover">
+                        <img src="assets/images/54530_2.jpg" data-filename="54530_2.jpg" onerror="handleImgFallback(this)" alt="Co-firing PLTU" class="w-full h-48 object-cover">
                         <div class="p-6">
-                            <span class="bg-sage text-forest text-[11px] font-bold uppercase px-3 py-1 rounded-full">Energi Terbarukan</span>
-                            <h3 class="text-lg font-extrabold mt-3 mb-2">Peran Wood Pellet dalam Program Co-Firing Pembangkit Listrik Asia</h3>
+                            <span class="text-[11px] font-bold uppercase text-forest">Energi Terbarukan</span>
+                            <h3 class="text-lg font-extrabold mt-1 mb-2">Peran Wood Pellet dalam Program Co-Firing Pembangkit Listrik Asia</h3>
                             <p class="text-sm text-gray-600 leading-relaxed">
                                 Pemanfaatan wood pellet sebagai bahan bakar pendamping batu bara mampu menekan emisi karbon secara signifikan tanpa perlu memodifikasi boiler utama pembangkit.
                             </p>
                         </div>
                     </div>
-                    <div class="px-6 pb-6 text-xs text-forest font-bold">12 November 2026 • Tim Riset Seka</div>
+                    <div class="px-6 pb-6 text-xs text-gray-400 font-semibold">12 November 2026 • Tim Riset Seka</div>
                 </article>
 
-                <article class="bg-white rounded-3xl overflow-hidden border border-black/5 flex flex-col justify-between">
+                <article class="bg-white rounded-[2rem] overflow-hidden border border-black/5 flex flex-col justify-between">
                     <div>
-                        <img src="assets/images/54528_2.jpg" 
-                             data-img="54528_2.jpg"
-                             onerror="handleImgFallback(this, 'Kontrol+Kadar+Air')"
-                             alt="Kadar Air Wood Pellet" 
-                             class="w-full h-48 object-cover">
+                        <img src="assets/images/54528_2.jpg" data-filename="54528_2.jpg" onerror="handleImgFallback(this)" alt="Kadar Air Wood Pellet" class="w-full h-48 object-cover">
                         <div class="p-6">
-                            <span class="bg-editorial text-timber text-[11px] font-bold uppercase px-3 py-1 rounded-full">Kontrol Kualitas</span>
-                            <h3 class="text-lg font-extrabold mt-3 mb-2">Mengapa Kadar Air di Bawah 9% Sangat Krusial untuk Efisiensi Pembakaran?</h3>
+                            <span class="text-[11px] font-bold uppercase text-timber">Kontrol Kualitas</span>
+                            <h3 class="text-lg font-extrabold mt-1 mb-2">Mengapa Kadar Air di Bawah 9% Sangat Krusial untuk Efisiensi Pembakaran?</h3>
                             <p class="text-sm text-gray-600 leading-relaxed">
                                 Kadar air berlebih menurunkan nilai kalori bersih (NCV) dan meningkatkan risiko hancurnya pelet selama perjalanan laut jarak jauh menuju Eropa maupun Jepang.
                             </p>
                         </div>
                     </div>
-                    <div class="px-6 pb-6 text-xs text-forest font-bold">28 Oktober 2026 • Divisi QC Pabrik</div>
+                    <div class="px-6 pb-6 text-xs text-gray-400 font-semibold">28 Oktober 2026 • Divisi QC Pabrik</div>
                 </article>
 
-                <article class="bg-white rounded-3xl overflow-hidden border border-black/5 flex flex-col justify-between">
+                <article class="bg-white rounded-[2rem] overflow-hidden border border-black/5 flex flex-col justify-between">
                     <div>
-                        <img src="assets/images/54527_2.jpg" 
-                             data-img="54527_2.jpg"
-                             onerror="handleImgFallback(this, 'Sertifikasi+SVLK')"
-                             alt="Sertifikasi SVLK" 
-                             class="w-full h-48 object-cover">
+                        <img src="assets/images/54527_2.jpg" data-filename="54527_2.jpg" onerror="handleImgFallback(this)" alt="Sertifikasi SVLK" class="w-full h-48 object-cover">
                         <div class="p-6">
-                            <span class="bg-forest text-white text-[11px] font-bold uppercase px-3 py-1 rounded-full">Keberlanjutan</span>
-                            <h3 class="text-lg font-extrabold mt-3 mb-2">Menjamin Rantai Pasok Legal melalui Sistem Verifikasi Legalitas Kayu (SVLK)</h3>
+                            <span class="text-[11px] font-bold uppercase text-forest">Keberlanjutan</span>
+                            <h3 class="text-lg font-extrabold mt-1 mb-2">Menjamin Rantai Pasok Legal melalui Sistem Verifikasi Legalitas Kayu (SVLK)</h3>
                             <p class="text-sm text-gray-600 leading-relaxed">
                                 Setiap ton bahan baku di fasilitas PT Seka Sinergi Mulya dapat ditelusuri asal-usulnya untuk memenuhi regulasi ketat pasar Uni Eropa dan Korea Selatan.
                             </p>
                         </div>
                     </div>
-                    <div class="px-6 pb-6 text-xs text-forest font-bold">05 Oktober 2026 • Kepatuhan &amp; Ekspor</div>
+                    <div class="px-6 pb-6 text-xs text-gray-400 font-semibold">05 Oktober 2026 • Kepatuhan &amp; Ekspor</div>
                 </article>
             </div>
         </section>
@@ -411,17 +378,18 @@
         <!-- ==================== 4. EKSPOR ==================== -->
         <section id="view-ekspor" class="view-section">
             <div class="mb-8">
-                <h1 class="text-3xl sm:text-5xl font-extrabold text-charcoal">Export &amp; Container Stuffing</h1>
+                <span class="text-xs font-bold uppercase tracking-widest text-timber">Ekspor &amp; Logistik</span>
+                <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-charcoal mt-1">Export &amp; Container Stuffing</h1>
                 <p class="text-gray-600 mt-2 max-w-2xl">
                     Simulasikan konfigurasi pemuatan kontainer (20ft &amp; 40ft HC) dengan pilihan kemasan Jumbo Bag 1 Ton, Karung Palet, maupun Curah (Bulk Liner).
                 </p>
             </div>
 
-            <!-- Interactive 3D Isometric Container Stuffing Animation Simulator -->
-            <div class="bg-white rounded-3xl p-6 sm:p-8 border border-black/5 mb-10">
-                <div class="flex flex-wrap items-center justify-between gap-4 pb-6 border-b border-gray-100">
+            <!-- Interactive 3D Container Stuffing Simulator -->
+            <div class="bg-white rounded-[2rem] p-6 sm:p-8 shadow-sm border border-black/10 mb-10">
+                <div class="flex flex-wrap items-center justify-between gap-4 pb-6 border-b border-black/10">
                     <div>
-                        <span class="bg-sage text-forest text-xs font-bold px-3 py-1 rounded-full">Simulasi Interaktif</span>
+                        <span class="bg-forest/10 text-forest text-xs font-bold px-3 py-1 rounded-full">Simulasi Interaktif</span>
                         <h2 class="text-2xl font-extrabold mt-2">Simulasi Pemuatan Kontainer (Stuffing 3D)</h2>
                     </div>
                     <div class="flex flex-wrap gap-2">
@@ -442,31 +410,31 @@
                         <div>
                             <label class="block text-xs font-bold uppercase text-gray-500 mb-2">1. Pilih Ukuran Kontainer</label>
                             <div class="grid grid-cols-2 gap-3">
-                                <button onclick="setSimContainer('20ft')" id="sim-btn-20ft" class="py-3 px-4 rounded-2xl bg-charcoal text-white text-xs font-bold transition text-left">
+                                <button onclick="setSimContainer('20ft')" id="sim-btn-20ft" class="py-3 px-4 rounded-2xl border-2 border-charcoal bg-charcoal text-white text-xs font-bold transition text-left">
                                     <span class="block text-sm">20 ft Standard</span>
-                                    <span class="text-[11px] opacity-85">5.9m × 2.35m × 2.39m</span>
+                                    <span class="text-[11px] opacity-80">5.9m × 2.35m × 2.39m</span>
                                 </button>
-                                <button onclick="setSimContainer('40hc')" id="sim-btn-40hc" class="py-3 px-4 rounded-2xl bg-editorial text-charcoal text-xs font-bold transition text-left">
+                                <button onclick="setSimContainer('40hc')" id="sim-btn-40hc" class="py-3 px-4 rounded-2xl border-2 border-black/10 bg-editorial text-charcoal text-xs font-bold transition text-left">
                                     <span class="block text-sm">40 ft High Cube</span>
-                                    <span class="text-[11px] opacity-75">12.03m × 2.35m × 2.69m</span>
+                                    <span class="text-[11px] opacity-70">12.03m × 2.35m × 2.69m</span>
                                 </button>
                             </div>
                         </div>
 
                         <div>
                             <label class="block text-xs font-bold uppercase text-gray-500 mb-2">2. Metode Kemasan &amp; Stuffing</label>
-                            <div class="space-y-2">
-                                <button onclick="setSimPack('jumbo')" id="sim-pack-jumbo" class="w-full py-3 px-4 rounded-2xl bg-sage text-charcoal text-xs font-bold flex justify-between items-center transition">
+                            <div class="space-y-2.5">
+                                <button onclick="setSimPack('jumbo')" id="sim-pack-jumbo" class="w-full py-3 px-4 rounded-2xl border-2 border-forest bg-sage text-charcoal text-xs font-bold flex justify-between items-center transition">
                                     <span>Jumbo Bag 1 Ton (FIBC)</span>
                                     <span class="bg-forest text-white px-2.5 py-0.5 rounded-full text-[10px]">Bongkar Forklift</span>
                                 </button>
-                                <button onclick="setSimPack('pallet')" id="sim-pack-pallet" class="w-full py-3 px-4 rounded-2xl bg-editorial text-charcoal text-xs font-bold flex justify-between items-center transition">
+                                <button onclick="setSimPack('pallet')" id="sim-pack-pallet" class="w-full py-3 px-4 rounded-2xl border-2 border-black/10 bg-editorial text-charcoal text-xs font-bold flex justify-between items-center transition">
                                     <span>Karung 15kg / 25kg di Atas Palet</span>
-                                    <span class="bg-black/10 px-2.5 py-0.5 rounded-full text-[10px]">Palet ISPM-15</span>
+                                    <span class="bg-charcoal/10 px-2.5 py-0.5 rounded-full text-[10px]">Palet ISPM-15</span>
                                 </button>
-                                <button onclick="setSimPack('bulk')" id="sim-pack-bulk" class="w-full py-3 px-4 rounded-2xl bg-editorial text-charcoal text-xs font-bold flex justify-between items-center transition">
+                                <button onclick="setSimPack('bulk')" id="sim-pack-bulk" class="w-full py-3 px-4 rounded-2xl border-2 border-black/10 bg-editorial text-charcoal text-xs font-bold flex justify-between items-center transition">
                                     <span>Curah / Bulk Container Liner</span>
-                                    <span class="bg-black/10 px-2.5 py-0.5 rounded-full text-[10px]">Kapasitas Maksimal</span>
+                                    <span class="bg-charcoal/10 px-2.5 py-0.5 rounded-full text-[10px]">Kapasitas Maksimal</span>
                                 </button>
                             </div>
                         </div>
@@ -482,7 +450,7 @@
                         <div class="grid grid-cols-3 gap-3 bg-editorial p-4 rounded-2xl">
                             <div>
                                 <span class="block text-[10px] uppercase font-bold text-gray-500">Unit Muatan</span>
-                                <span id="tele-units" class="text-base font-extrabold text-charcoal">12/12 Bag</span>
+                                <span id="tele-units" class="text-base font-extrabold text-charcoal">12 Bag</span>
                             </div>
                             <div>
                                 <span class="block text-[10px] uppercase font-bold text-gray-500">Total Tonase</span>
@@ -495,73 +463,54 @@
                         </div>
                     </div>
 
-                    <div id="canvas-wrapper" class="lg:col-span-7 bg-editorial rounded-2xl p-4 flex flex-col items-center justify-center">
-                        <div class="w-full flex justify-between items-center text-xs font-bold text-charcoal px-2 mb-2">
-                            <span id="canvas-spec-header">FCL 20 FT • JUMBO BAG 1 TON (12 MT)</span>
+                    <div class="lg:col-span-7 bg-editorial rounded-[1.75rem] p-4 border border-black/5 flex flex-col items-center justify-center">
+                        <div class="w-full flex justify-between items-center text-xs font-bold text-gray-500 px-2 mb-2">
+                            <span id="canvas-spec-header">FCL 20 FT • JUMBO BAG 1 TON</span>
                             <span class="text-forest">Proyeksi Isometrik 3D</span>
                         </div>
-                        <canvas id="stuffingCanvas" class="w-full rounded-xl block"></canvas>
+                        <canvas id="stuffingCanvas" width="640" height="360" class="w-full h-auto max-h-[360px] rounded-xl"></canvas>
                     </div>
                 </div>
             </div>
 
-            <!-- Ports & Payment Terms -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
-                <div class="bg-white rounded-3xl p-7 border border-black/5">
-                    <h3 class="text-xl font-extrabold text-charcoal mb-4">Pelabuhan Muat Utama (Indonesia)</h3>
+            <!-- Pelabuhan & Metode Pembayaran -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-white rounded-[2rem] p-7 border border-black/5">
+                    <h3 class="text-xl font-extrabold mb-4">Pelabuhan Muat Utama (Indonesia)</h3>
                     <ul class="space-y-3 text-sm">
-                        <li class="flex justify-between py-2 border-b border-gray-100">
+                        <li class="flex justify-between py-2 border-b border-black/5">
                             <span class="font-bold">Tanjung Emas (Semarang, Jawa Tengah)</span>
-                            <span class="bg-sage text-forest px-2.5 py-0.5 rounded-full text-xs font-bold">FOB / CIF</span>
+                            <span class="text-forest font-semibold">FOB / CIF</span>
                         </li>
-                        <li class="flex justify-between py-2 border-b border-gray-100">
+                        <li class="flex justify-between py-2 border-b border-black/5">
                             <span class="font-bold">Tanjung Perak (Surabaya, Jawa Timur)</span>
-                            <span class="bg-sage text-forest px-2.5 py-0.5 rounded-full text-xs font-bold">FOB / CIF</span>
+                            <span class="text-forest font-semibold">FOB / CIF</span>
                         </li>
-                        <li class="flex justify-between py-2 border-b border-gray-100">
+                        <li class="flex justify-between py-2 border-b border-black/5">
                             <span class="font-bold">Belawan &amp; Dumai (Sumatra)</span>
-                            <span class="bg-editorial text-timber px-2.5 py-0.5 rounded-full text-xs font-bold">FOB / Breakbulk</span>
+                            <span class="text-forest font-semibold">FOB / Breakbulk</span>
                         </li>
                         <li class="flex justify-between py-2">
                             <span class="font-bold">Tanjung Priok (Jakarta)</span>
-                            <span class="bg-sage text-forest px-2.5 py-0.5 rounded-full text-xs font-bold">FOB / CIF</span>
+                            <span class="text-forest font-semibold">FOB / CIF</span>
                         </li>
                     </ul>
                 </div>
 
-            <!-- Export Warehouse Real Photo Strip -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div onclick="openLightbox('54529_2.jpg', 'Tumpukan Stok Jumbo Bag 1 Ton Siap Stuffing Kontainer')" class="cursor-pointer bg-white rounded-3xl overflow-hidden border border-black/5 group">
-                    <div class="relative h-64 overflow-hidden">
-                        <img src="assets/images/54529_2.jpg" 
-                             data-img="54529_2.jpg"
-                             onerror="handleImgFallback(this, 'Stok+Jumbo+Bag+Ekspor')"
-                             alt="Gudang Stok Jumbo Bag Siap Ekspor" 
-                             class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                    </div>
-                    <div class="p-5 flex items-center justify-between">
-                        <div>
-                            <h4 class="font-bold text-base text-charcoal">Stok Jumbo Bag 1 Ton (FIBC)</h4>
-                            <p class="text-xs text-gray-600">Kapasitas penyimpanan tertutup untuk pengapalan FOB/CIF.</p>
+                <div class="bg-charcoal text-white rounded-[2rem] p-7 flex flex-col justify-between">
+                    <div>
+                        <span class="text-xs uppercase tracking-widest text-amber-300 font-bold">International Trade Terms</span>
+                        <h3 class="text-xl font-extrabold mt-1 mb-4">Metode Pembayaran Ekspor</h3>
+                        <div class="space-y-3 text-sm text-gray-300">
+                            <div class="p-3.5 rounded-2xl bg-white/10">
+                                <p class="font-bold text-white">Telegraphic Transfer (T/T)</p>
+                                <p class="text-xs mt-0.5">50% DP saat kontrak penjualan, 50% pelunasan setelah dokumen B/L &amp; sertifikat SGS terbit.</p>
+                            </div>
+                            <div class="p-3.5 rounded-2xl bg-white/10">
+                                <p class="font-bold text-white">Irrevocable Letter of Credit (L/C at Sight)</p>
+                                <p class="text-xs mt-0.5">Tersedia untuk kontrak pasokan volume besar (&gt;1.000 MT) melalui bank internasional.</p>
+                            </div>
                         </div>
-                        <span class="text-forest text-xs font-bold"><i class="fa-solid fa-expand"></i></span>
-                    </div>
-                </div>
-
-                <div onclick="openLightbox('54527_2.jpg', 'Area Gudang Penyimpanan Tertutup PT Seka Sinergi Mulya')" class="cursor-pointer bg-white rounded-3xl overflow-hidden border border-black/5 group">
-                    <div class="relative h-64 overflow-hidden">
-                        <img src="assets/images/54527_2.jpg" 
-                             data-img="54527_2.jpg"
-                             onerror="handleImgFallback(this, 'Area+Gudang+Logistik')"
-                             alt="Penataan Karung Jumbo Bag di Gudang" 
-                             class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                    </div>
-                    <div class="p-5 flex items-center justify-between">
-                        <div>
-                            <h4 class="font-bold text-base text-charcoal">Penataan Logistik Siap Muat</h4>
-                            <p class="text-xs text-gray-600">Mempercepat waktu stuffing kontainer 20ft &amp; 40ft HC.</p>
-                        </div>
-                        <span class="text-forest text-xs font-bold"><i class="fa-solid fa-expand"></i></span>
                     </div>
                 </div>
             </div>
@@ -570,116 +519,106 @@
         <!-- ==================== 5. GALERI ==================== -->
         <section id="view-galeri" class="view-section">
             <div class="mb-8">
-                <h1 class="text-3xl sm:text-5xl font-extrabold text-charcoal">Galeri Pabrik &amp; Gudang</h1>
-                <p class="text-gray-600 mt-2 max-w-2xl">Dokumentasi nyata fasilitas produksi, bahan baku kayu olahan, kualitas pelet, dan gudang penyimpanan jumbo bag PT Seka Sinergi Mulya. Klik foto untuk memperbesar.</p>
+                <span class="text-xs font-bold uppercase tracking-widest text-forest">Dokumentasi Lapangan</span>
+                <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-charcoal mt-1">Galeri Pabrik &amp; Gudang</h1>
+                <p class="text-gray-600 mt-2 max-w-2xl">Klik pada foto untuk memperbesar dokumentasi fasilitas produksi, kualitas wood pellet, dan gudang penyimpanan jumbo bag PT Seka Sinergi Mulya.</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div onclick="openLightbox('54530_2.jpg', 'Lini Produksi & Siklon Pengeringan — PT Seka Sinergi Mulya')" class="cursor-pointer bg-white rounded-3xl overflow-hidden border border-black/5 group">
-                    <div class="relative h-80 overflow-hidden">
-                        <img src="assets/images/54530_2.jpg" 
-                             data-img="54530_2.jpg"
-                             onerror="handleImgFallback(this, 'Lini+Produksi+%26+Siklon+Pengeringan')"
-                             alt="Area Produksi dan Pengeringan" 
-                             class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                        <span class="absolute top-4 right-4 w-9 h-9 rounded-full bg-charcoal/75 text-white flex items-center justify-center text-xs">
-                            <i class="fa-solid fa-magnifying-glass-plus"></i>
+                <!-- Gambar 1: 54530_2.jpg -->
+                <div onclick="openLightbox('54530_2.jpg', 'Lini Produksi & Siklon Pengeringan PT Seka Sinergi Mulya')" class="cursor-pointer bg-white rounded-[2rem] overflow-hidden border border-black/5 shadow-sm group">
+                    <div class="relative overflow-hidden h-80">
+                        <img src="assets/images/54530_2.jpg" data-filename="54530_2.jpg" onerror="handleImgFallback(this)" alt="Area Produksi dan Pengeringan" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <span class="absolute top-4 right-4 bg-black/60 text-white w-9 h-9 rounded-full flex items-center justify-center backdrop-blur-sm">
+                            <i class="fa-solid fa-expand text-xs"></i>
                         </span>
                     </div>
                     <div class="p-6">
-                        <h3 class="font-extrabold text-lg text-charcoal">Lini Produksi &amp; Siklon Pengeringan</h3>
+                        <h3 class="font-bold text-lg text-charcoal">Lini Produksi &amp; Siklon Pengeringan</h3>
                         <p class="text-sm text-gray-600 mt-1">Proses pengolahan serbuk kayu dengan sistem pemisahan debu siklon dan pengeringan terkontrol.</p>
                     </div>
                 </div>
 
-                <div onclick="openLightbox('54528_2.jpg', 'Inspeksi Fisik Wood Pellet 6mm–8mm — PT Seka Sinergi Mulya')" class="cursor-pointer bg-white rounded-3xl overflow-hidden border border-black/5 group">
-                    <div class="relative h-80 overflow-hidden">
-                        <img src="assets/images/54528_2.jpg" 
-                             data-img="54528_2.jpg"
-                             onerror="handleImgFallback(this, 'Inspeksi+Fisik+Wood+Pellet')"
-                             alt="Hasil Jadi Wood Pellet" 
-                             class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                        <span class="absolute top-4 right-4 w-9 h-9 rounded-full bg-charcoal/75 text-white flex items-center justify-center text-xs">
-                            <i class="fa-solid fa-magnifying-glass-plus"></i>
+                <!-- Gambar 2: 54528_2.jpg -->
+                <div onclick="openLightbox('54528_2.jpg', 'Inspeksi Fisik Wood Pellet (Diameter 6mm–8mm)')" class="cursor-pointer bg-white rounded-[2rem] overflow-hidden border border-black/5 shadow-sm group">
+                    <div class="relative overflow-hidden h-80">
+                        <img src="assets/images/54528_2.jpg" data-filename="54528_2.jpg" onerror="handleImgFallback(this)" alt="Hasil Jadi Wood Pellet" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <span class="absolute top-4 right-4 bg-black/60 text-white w-9 h-9 rounded-full flex items-center justify-center backdrop-blur-sm">
+                            <i class="fa-solid fa-expand text-xs"></i>
                         </span>
                     </div>
                     <div class="p-6">
-                        <h3 class="font-extrabold text-lg text-charcoal">Inspeksi Fisik Wood Pellet</h3>
+                        <h3 class="font-bold text-lg text-charcoal">Inspeksi Fisik Wood Pellet</h3>
                         <p class="text-sm text-gray-600 mt-1">Tekstur padat, permukaan mengilap alami dari lignin kayu, dan minim serpihan halus (fines).</p>
                     </div>
                 </div>
 
-                <div onclick="openLightbox('54529_2.jpg', 'Gudang Stok Jumbo Bag Siap Ekspor — PT Seka Sinergi Mulya')" class="cursor-pointer bg-white rounded-3xl overflow-hidden border border-black/5 group">
-                    <div class="relative h-80 overflow-hidden">
-                        <img src="assets/images/54529_2.jpg" 
-                             data-img="54529_2.jpg"
-                             onerror="handleImgFallback(this, 'Gudang+Stok+Siap+Ekspor')"
-                             alt="Gudang Penyimpanan Jumbo Bag" 
-                             class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                        <span class="absolute top-4 right-4 w-9 h-9 rounded-full bg-charcoal/75 text-white flex items-center justify-center text-xs">
-                            <i class="fa-solid fa-magnifying-glass-plus"></i>
+                <!-- Gambar 3: 54529_2.jpg -->
+                <div onclick="openLightbox('54529_2.jpg', 'Gudang Penyimpanan Jumbo Bag Siap Ekspor')" class="cursor-pointer bg-white rounded-[2rem] overflow-hidden border border-black/5 shadow-sm group">
+                    <div class="relative overflow-hidden h-80">
+                        <img src="assets/images/54529_2.jpg" data-filename="54529_2.jpg" onerror="handleImgFallback(this)" alt="Gudang Penyimpanan Jumbo Bag" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <span class="absolute top-4 right-4 bg-black/60 text-white w-9 h-9 rounded-full flex items-center justify-center backdrop-blur-sm">
+                            <i class="fa-solid fa-expand text-xs"></i>
                         </span>
                     </div>
                     <div class="p-6">
-                        <h3 class="font-extrabold text-lg text-charcoal">Gudang Stok Siap Ekspor</h3>
+                        <h3 class="font-bold text-lg text-charcoal">Gudang Stok Siap Ekspor</h3>
                         <p class="text-sm text-gray-600 mt-1">Penyimpanan dalam ruangan tertutup untuk menjaga kadar air tetap stabil sebelum proses stuffing.</p>
                     </div>
                 </div>
 
-                <div onclick="openLightbox('54527_2.jpg', 'Kesiapan Logistik Jumbo Bag — PT Seka Sinergi Mulya')" class="cursor-pointer bg-white rounded-3xl overflow-hidden border border-black/5 group">
-                    <div class="relative h-80 overflow-hidden">
-                        <img src="assets/images/54527_2.jpg" 
-                             data-img="54527_2.jpg"
-                             onerror="handleImgFallback(this, 'Kesiapan+Logistik+Jumbo+Bag')"
-                             alt="Penataan Karung Jumbo Bag" 
-                             class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                        <span class="absolute top-4 right-4 w-9 h-9 rounded-full bg-charcoal/75 text-white flex items-center justify-center text-xs">
-                            <i class="fa-solid fa-magnifying-glass-plus"></i>
+                <!-- Gambar 4: 54527_2.jpg -->
+                <div onclick="openLightbox('54527_2.jpg', 'Penataan Logistik Jumbo Bag untuk Pemuatan Kontainer')" class="cursor-pointer bg-white rounded-[2rem] overflow-hidden border border-black/5 shadow-sm group">
+                    <div class="relative overflow-hidden h-80">
+                        <img src="assets/images/54527_2.jpg" data-filename="54527_2.jpg" onerror="handleImgFallback(this)" alt="Penataan Karung Jumbo Bag" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <span class="absolute top-4 right-4 bg-black/60 text-white w-9 h-9 rounded-full flex items-center justify-center backdrop-blur-sm">
+                            <i class="fa-solid fa-expand text-xs"></i>
                         </span>
                     </div>
                     <div class="p-6">
-                        <h3 class="font-extrabold text-lg text-charcoal">Kesiapan Logistik Jumbo Bag</h3>
+                        <h3 class="font-bold text-lg text-charcoal">Kesiapan Logistik Jumbo Bag</h3>
                         <p class="text-sm text-gray-600 mt-1">Penataan sistematis memudahkan proses pemuatan cepat menggunakan forklift ke dalam kontainer.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- ==================== 6. KONTAK (SIMPLE 4-FIELD FORM) ==================== -->
+        <!-- ==================== 6. KONTAK ==================== -->
         <section id="view-kontak" class="view-section">
-            <div class="max-w-2xl mx-auto bg-white rounded-3xl p-6 sm:p-10 border border-black/5">
-                <h1 class="text-3xl sm:text-5xl font-extrabold text-charcoal">Hubungi Kami</h1>
+            <div class="max-w-2xl mx-auto bg-white rounded-[2rem] p-6 sm:p-10 shadow-sm border border-black/5">
+                <span class="text-xs font-bold uppercase tracking-widest text-forest">Hubungi Kami</span>
+                <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-charcoal mt-1">Kirim Pesan &amp; Pertanyaan</h1>
                 <p class="text-gray-600 text-sm mt-2 mb-8">
                     Silakan isi formulir singkat di bawah ini untuk permintaan penawaran harga (FOB/CIF), sampel produk, atau jadwal kunjungan pabrik.
                 </p>
 
                 <form id="contact-form" onsubmit="handleContactSubmit(event)" class="space-y-5">
                     <div>
-                        <label class="block text-xs font-bold uppercase text-gray-600 mb-1.5">Nama *</label>
-                        <input type="text" required placeholder="Masukkan nama lengkap Anda" class="w-full px-4 py-3.5 rounded-xl bg-editorial text-sm focus:outline-none focus:ring-2 focus:ring-forest">
+                        <label class="block text-xs font-bold uppercase text-gray-700 mb-1.5">Nama *</label>
+                        <input type="text" required placeholder="Masukkan nama lengkap Anda" class="w-full px-4 py-3.5 rounded-xl bg-editorial border border-black/10 text-sm focus:outline-none focus:border-forest">
                     </div>
 
                     <div>
-                        <label class="block text-xs font-bold uppercase text-gray-600 mb-1.5">Email *</label>
-                        <input type="email" required placeholder="nama@perusahaan.com" class="w-full px-4 py-3.5 rounded-xl bg-editorial text-sm focus:outline-none focus:ring-2 focus:ring-forest">
+                        <label class="block text-xs font-bold uppercase text-gray-700 mb-1.5">Email *</label>
+                        <input type="email" required placeholder="nama@perusahaan.com" class="w-full px-4 py-3.5 rounded-xl bg-editorial border border-black/10 text-sm focus:outline-none focus:border-forest">
                     </div>
 
                     <div>
-                        <label class="block text-xs font-bold uppercase text-gray-600 mb-1.5">Telepon *</label>
-                        <input type="tel" required placeholder="+62 812-xxxx-xxxx" class="w-full px-4 py-3.5 rounded-xl bg-editorial text-sm focus:outline-none focus:ring-2 focus:ring-forest">
+                        <label class="block text-xs font-bold uppercase text-gray-700 mb-1.5">Telepon *</label>
+                        <input type="tel" required placeholder="+62 812-xxxx-xxxx" class="w-full px-4 py-3.5 rounded-xl bg-editorial border border-black/10 text-sm focus:outline-none focus:border-forest">
                     </div>
 
                     <div>
-                        <label class="block text-xs font-bold uppercase text-gray-600 mb-1.5">Pesan *</label>
-                        <textarea rows="4" required placeholder="Tuliskan kebutuhan volume wood pellet, pelabuhan tujuan, atau pertanyaan Anda..." class="w-full px-4 py-3.5 rounded-xl bg-editorial text-sm focus:outline-none focus:ring-2 focus:ring-forest"></textarea>
+                        <label class="block text-xs font-bold uppercase text-gray-700 mb-1.5">Pesan *</label>
+                        <textarea rows="4" required placeholder="Tuliskan kebutuhan volume wood pellet, pelabuhan tujuan, atau pertanyaan Anda..." class="w-full px-4 py-3.5 rounded-xl bg-editorial border border-black/10 text-sm focus:outline-none focus:border-forest"></textarea>
                     </div>
 
-                    <button type="submit" class="w-full bg-forest hover:bg-charcoal text-white py-4 rounded-full font-bold text-sm transition">
+                    <button type="submit" class="w-full bg-forest hover:bg-charcoal text-white py-4 rounded-full font-bold text-sm transition shadow-md">
                         Kirim Pesan
                     </button>
                 </form>
 
-                <div id="contact-success" class="hidden mt-6 p-5 rounded-2xl bg-sage text-forest text-sm font-bold">
+                <div id="contact-success" class="hidden mt-6 p-5 rounded-2xl bg-sage border border-forest/20 text-forest text-sm font-semibold">
                     <i class="fa-solid fa-circle-check mr-2"></i> Terima kasih! Pesan Anda telah kami terima. Tim PT Seka Sinergi Mulya akan segera menghubungi Anda.
                 </div>
             </div>
@@ -687,14 +626,30 @@
 
     </main>
 
+    <!-- LIGHTBOX MODAL GALERI -->
+    <div id="lightbox-modal" onclick="closeLightbox()" class="hidden fixed inset-0 z-50 bg-black/85 backdrop-blur-sm flex items-center justify-center p-4">
+        <div onclick="event.stopPropagation()" class="max-w-4xl w-full bg-white rounded-3xl overflow-hidden shadow-2xl">
+            <div class="relative bg-black flex items-center justify-center max-h-[75vh]">
+                <img id="lightbox-img" src="" alt="Preview Foto" class="max-h-[75vh] w-auto object-contain">
+                <button onclick="closeLightbox()" class="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/90 text-charcoal flex items-center justify-center hover:bg-white">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div class="p-4 sm:px-6 flex justify-between items-center">
+                <p id="lightbox-caption" class="text-sm font-bold text-charcoal"></p>
+                <button onclick="closeLightbox()" class="text-xs font-bold text-forest hover:underline">Tutup</button>
+            </div>
+        </div>
+    </div>
+
     <!-- FOOTER: INFORMASI KONTAK & IKUTI KAMI DI SOSIAL MEDIA -->
     <footer class="bg-charcoal text-white mt-16 py-12 px-4 md:px-10">
         <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-10 pb-10 border-b border-white/10">
-            <!-- Company Identity -->
+            <!-- Identitas Perusahaan -->
             <div class="md:col-span-5">
                 <div class="flex items-center gap-3 mb-4">
                     <div class="w-10 h-10 rounded-full bg-forest flex items-center justify-center">
-                        <i class="fa-solid fa-seedling text-white text-base"></i>
+                        <i class="fa-solid fa-seedling text-base"></i>
                     </div>
                     <span class="font-extrabold text-2xl tracking-tight">Seka Synergy</span>
                 </div>
@@ -745,48 +700,30 @@
 
         <div class="max-w-7xl mx-auto pt-6 flex flex-wrap justify-between items-center gap-4 text-xs text-gray-400">
             <span>© 2026 PT Seka Sinergi Mulya. Semua hak dilindungi undang-undang.</span>
-            <span class="text-emerald-300 font-semibold">Biomassa Sesuai Standar SVLK &amp; ISO 17225-2</span>
+            <span>Biomassa Sesuai Standar SVLK &amp; ISO 17225-2</span>
         </div>
     </footer>
 
-    <!-- LIGHTBOX MODAL UNTUK MEMPERBESAR GAMBAR GALERI & PRODUK -->
-    <div id="lightbox-modal" onclick="closeLightbox()" class="hidden fixed inset-0 z-50 bg-black/85 backdrop-blur-sm flex items-center justify-center p-4">
-        <div onclick="event.stopPropagation()" class="relative max-w-4xl w-full bg-white rounded-3xl overflow-hidden shadow-2xl">
-            <button onclick="closeLightbox()" aria-label="Tutup Pratinjau" class="absolute top-4 right-4 z-10 w-10 h-10 rounded-full bg-charcoal text-white hover:bg-forest flex items-center justify-center transition">
-                <i class="fa-solid fa-xmark"></i>
-            </button>
-            <img id="lightbox-img" src="" alt="Pratinjau Foto Fasilitas" class="w-full max-h-[75vh] object-contain bg-charcoal">
-            <div class="p-5 bg-white flex items-center justify-between">
-                <p id="lightbox-caption" class="font-bold text-sm sm:text-base text-charcoal"></p>
-                <span class="text-xs font-semibold text-forest">PT Seka Sinergi Mulya</span>
-            </div>
-        </div>
-    </div>
-
     <!-- JAVASCRIPT LOGIC -->
     <script>
-        // 0. Automatic Image Path Resolver (Supports both assets/images/ and root folder)
-        function handleImgFallback(imgEl, label) {
-            const filename = imgEl.getAttribute('data-img');
-            const stage = imgEl.getAttribute('data-fallback-stage') || '0';
-            if (stage === '0' && filename) {
-                imgEl.setAttribute('data-fallback-stage', '1');
-                imgEl.src = filename;
-            } else {
-                imgEl.onerror = null;
-                imgEl.src = `https://placehold.co/900x600/1B4332/FFFFFF?text=${label}`;
+        // Auto-fallback path resolver: cek assets/images/ lalu root folder
+        function handleImgFallback(img) {
+            const fname = img.getAttribute('data-filename');
+            const step = parseInt(img.getAttribute('data-step') || '0', 10);
+            if (step === 0 && fname) {
+                img.setAttribute('data-step', '1');
+                img.src = fname;
             }
         }
 
         function openLightbox(filename, caption) {
             const modal = document.getElementById('lightbox-modal');
             const img = document.getElementById('lightbox-img');
-            const cap = document.getElementById('lightbox-caption');
-            img.setAttribute('data-img', filename);
-            img.setAttribute('data-fallback-stage', '0');
-            img.onerror = function() { handleImgFallback(this, 'Seka+Synergy+Facility'); };
+            img.setAttribute('data-filename', filename);
+            img.setAttribute('data-step', '0');
             img.src = 'assets/images/' + filename;
-            cap.textContent = caption;
+            img.onerror = function() { handleImgFallback(this); };
+            document.getElementById('lightbox-caption').textContent = caption;
             modal.classList.remove('hidden');
         }
 
@@ -794,7 +731,6 @@
             document.getElementById('lightbox-modal').classList.add('hidden');
         }
 
-        // 1. Multi-Page SPA Routing
         function navigate(viewId) {
             document.querySelectorAll('.view-section').forEach(el => el.classList.remove('active'));
             const target = document.getElementById('view-' + viewId);
@@ -802,16 +738,16 @@
 
             document.querySelectorAll('.nav-pill').forEach(btn => {
                 btn.classList.remove('pill-active');
-                btn.classList.add('text-charcoal');
+                btn.classList.add('text-gray-700');
             });
             const activeBtn = document.getElementById('nav-' + viewId);
             if (activeBtn) {
                 activeBtn.classList.add('pill-active');
-                activeBtn.classList.remove('text-charcoal');
+                activeBtn.classList.remove('text-gray-700');
             }
             window.scrollTo({ top: 0, behavior: 'smooth' });
             if (viewId === 'ekspor') {
-                setTimeout(resizeAndDrawCanvas, 50);
+                setTimeout(drawStuffingCanvas, 50);
             }
         }
 
@@ -819,7 +755,6 @@
             document.getElementById('mobile-menu').classList.toggle('hidden');
         }
 
-        // 2. Product Technical Specifications Switcher
         const specData = {
             industrial: [
                 { param: 'Bahan Baku', method: 'ISO 17225-1', val: '100% Kayu Keras Tropis & Hutan Tanaman' },
@@ -845,22 +780,21 @@
             const tbody = document.getElementById('spec-table-body');
             tbody.innerHTML = specData[grade].map(row => `
                 <tr>
-                    <td class="py-3 font-bold text-charcoal">${row.param}</td>
+                    <td class="py-3 font-semibold text-charcoal">${row.param}</td>
                     <td class="py-3 text-gray-500 text-xs">${row.method}</td>
-                    <td class="py-3 font-extrabold text-forest text-right">${row.val}</td>
+                    <td class="py-3 font-bold text-forest text-right">${row.val}</td>
                 </tr>
             `).join('');
 
             document.getElementById('btn-industrial').className = grade === 'industrial'
                 ? 'px-5 py-2 rounded-full text-xs font-bold bg-charcoal text-white transition'
-                : 'px-5 py-2 rounded-full text-xs font-bold text-charcoal transition';
+                : 'px-5 py-2 rounded-full text-xs font-bold text-gray-700 transition';
             document.getElementById('btn-premium').className = grade === 'premium'
                 ? 'px-5 py-2 rounded-full text-xs font-bold bg-charcoal text-white transition'
-                : 'px-5 py-2 rounded-full text-xs font-bold text-charcoal transition';
+                : 'px-5 py-2 rounded-full text-xs font-bold text-gray-700 transition';
         }
         switchGrade('industrial');
 
-        // 3. B2B Volume & Energy Estimator
         function updateB2BCalc() {
             const mt = parseInt(document.getElementById('calc-mt-slider').value, 10);
             document.getElementById('calc-mt-label').textContent = mt.toLocaleString('id-ID') + ' MT';
@@ -871,7 +805,6 @@
         }
         updateB2BCalc();
 
-        // 4. Interactive 3D Isometric Container Stuffing Simulator
         let simState = { container: '20ft', pack: 'jumbo', progress: 100, animId: null };
 
         const simSpecs = {
@@ -886,11 +819,11 @@
         function setSimContainer(type) {
             simState.container = type;
             document.getElementById('sim-btn-20ft').className = type === '20ft'
-                ? 'py-3 px-4 rounded-2xl bg-charcoal text-white text-xs font-bold transition text-left'
-                : 'py-3 px-4 rounded-2xl bg-editorial text-charcoal text-xs font-bold transition text-left';
+                ? 'py-3 px-4 rounded-2xl border-2 border-charcoal bg-charcoal text-white text-xs font-bold transition text-left'
+                : 'py-3 px-4 rounded-2xl border-2 border-black/10 bg-editorial text-charcoal text-xs font-bold transition text-left';
             document.getElementById('sim-btn-40hc').className = type === '40hc'
-                ? 'py-3 px-4 rounded-2xl bg-charcoal text-white text-xs font-bold transition text-left'
-                : 'py-3 px-4 rounded-2xl bg-editorial text-charcoal text-xs font-bold transition text-left';
+                ? 'py-3 px-4 rounded-2xl border-2 border-charcoal bg-charcoal text-white text-xs font-bold transition text-left'
+                : 'py-3 px-4 rounded-2xl border-2 border-black/10 bg-editorial text-charcoal text-xs font-bold transition text-left';
             updateSimTelemetry();
             drawStuffingCanvas();
         }
@@ -900,8 +833,8 @@
             ['jumbo', 'pallet', 'bulk'].forEach(p => {
                 const el = document.getElementById('sim-pack-' + p);
                 el.className = p === pack
-                    ? 'w-full py-3 px-4 rounded-2xl bg-sage text-charcoal text-xs font-bold flex justify-between items-center transition'
-                    : 'w-full py-3 px-4 rounded-2xl bg-editorial text-charcoal text-xs font-bold flex justify-between items-center transition';
+                    ? 'w-full py-3 px-4 rounded-2xl border-2 border-forest bg-sage text-charcoal text-xs font-bold flex justify-between items-center transition'
+                    : 'w-full py-3 px-4 rounded-2xl border-2 border-black/10 bg-editorial text-charcoal text-xs font-bold flex justify-between items-center transition';
             });
             updateSimTelemetry();
             drawStuffingCanvas();
@@ -954,16 +887,13 @@
             drawStuffingCanvas();
         }
 
-        function drawIsoBox(ctx, x, y, z, dx, dy, dz, topColor, leftColor, rightColor, originX, originY, scale) {
-            const iso = (ix, iy, iz) => ({
-                px: originX + (ix - iy) * 0.866 * scale,
-                py: originY + ((ix + iy) * 0.5 - iz) * scale
-            });
+        function drawIsoBox(ctx, x, y, z, dx, dy, dz, topColor, leftColor, rightColor, originX, originY) {
+            const iso = (ix, iy, iz) => ({ px: originX + (ix - iy) * 0.866, py: originY + (ix + iy) * 0.5 - iz });
             const p000 = iso(x, y, z), p100 = iso(x + dx, y, z), p110 = iso(x + dx, y + dy, z), p010 = iso(x, y + dy, z);
             const p001 = iso(x, y, z + dz), p101 = iso(x + dx, y, z + dz), p111 = iso(x + dx, y + dy, z + dz), p011 = iso(x, y + dy, z + dz);
 
             ctx.beginPath(); ctx.moveTo(p001.px, p001.py); ctx.lineTo(p101.px, p101.py); ctx.lineTo(p111.px, p111.py); ctx.lineTo(p011.px, p011.py); ctx.closePath();
-            ctx.fillStyle = topColor; ctx.fill(); ctx.strokeStyle = 'rgba(0,0,0,0.15)'; ctx.lineWidth = 0.8; ctx.stroke();
+            ctx.fillStyle = topColor; ctx.fill(); ctx.strokeStyle = 'rgba(0,0,0,0.18)'; ctx.lineWidth = 0.8; ctx.stroke();
 
             ctx.beginPath(); ctx.moveTo(p010.px, p010.py); ctx.lineTo(p110.px, p110.py); ctx.lineTo(p111.px, p111.py); ctx.lineTo(p011.px, p011.py); ctx.closePath();
             ctx.fillStyle = leftColor; ctx.fill(); ctx.stroke();
@@ -972,36 +902,16 @@
             ctx.fillStyle = rightColor; ctx.fill(); ctx.stroke();
         }
 
-        function resizeAndDrawCanvas() {
-            const canvas = document.getElementById('stuffingCanvas');
-            const wrapper = document.getElementById('canvas-wrapper');
-            if (!canvas || !wrapper) return;
-            const rect = wrapper.getBoundingClientRect();
-            const targetW = Math.max(280, Math.floor(rect.width - 32));
-            const targetH = Math.round(targetW * 0.56);
-            canvas.width = targetW;
-            canvas.height = targetH;
-            drawStuffingCanvas();
-        }
-
         function drawStuffingCanvas() {
             const canvas = document.getElementById('stuffingCanvas');
             if (!canvas) return;
             const ctx = canvas.getContext('2d');
-            const cw = canvas.width;
-            const ch = canvas.height;
-            ctx.clearRect(0, 0, cw, ch);
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-            const scale = cw / 640;
             const is40 = simState.container === '40hc';
             const L = is40 ? 290 : 185, W = 96, H = is40 ? 96 : 84;
-            const originX = (is40 ? 250 : 285) * scale;
-            const originY = (is40 ? 155 : 175) * scale;
-
-            const iso = (ix, iy, iz) => ({
-                px: originX + (ix - iy) * 0.866 * scale,
-                py: originY + ((ix + iy) * 0.5 - iz) * scale
-            });
+            const originX = is40 ? 250 : 285, originY = is40 ? 155 : 175;
+            const iso = (ix, iy, iz) => ({ px: originX + (ix - iy) * 0.866, py: originY + (ix + iy) * 0.5 - iz });
 
             const b000 = iso(0, 0, 0), b100 = iso(L, 0, 0), b110 = iso(L, W, 0), b010 = iso(0, W, 0);
             const t000 = iso(0, 0, H), t100 = iso(L, 0, H), t110 = iso(L, W, H), t010 = iso(0, W, H);
@@ -1033,7 +943,7 @@
                             if (partialFrac <= 0.02) { idx++; continue; }
                             slideOffset = (1 - partialFrac) * 75;
                         }
-                        drawIsoBox(ctx, pad + c * unitDx + slideOffset, pad + r * unitDy, l * unitDz, unitDx - 2, unitDy - 2, unitDz - 2, colors[0], colors[1], colors[2], originX, originY, scale);
+                        drawIsoBox(ctx, pad + c * unitDx + slideOffset, pad + r * unitDy, l * unitDz, unitDx - 2, unitDy - 2, unitDz - 2, colors[0], colors[1], colors[2], originX, originY);
                         idx++;
                     }
                 }
@@ -1045,27 +955,19 @@
             });
 
             const doorPos = iso(L + 16, W / 2, 0);
-            ctx.fillStyle = '#111111'; ctx.beginPath(); ctx.roundRect(doorPos.px - 22 * scale, doorPos.py - 10 * scale, 44 * scale, 20 * scale, 6 * scale); ctx.fill();
-            ctx.fillStyle = '#FFFFFF'; ctx.font = `bold ${Math.max(9, Math.round(10 * scale))}px "Plus Jakarta Sans", sans-serif`; ctx.textAlign = 'center';
-            ctx.fillText('DOOR', doorPos.px, doorPos.py + 3.5 * scale);
+            ctx.fillStyle = '#111111'; ctx.beginPath(); ctx.roundRect(doorPos.px - 22, doorPos.py - 10, 44, 20, 6); ctx.fill();
+            ctx.fillStyle = '#FFFFFF'; ctx.font = 'bold 10px "Plus Jakarta Sans", sans-serif'; ctx.textAlign = 'center';
+            ctx.fillText('DOOR', doorPos.px, doorPos.py + 3.5);
         }
+
+        updateSimTelemetry();
+        drawStuffingCanvas();
 
         function handleContactSubmit(e) {
             e.preventDefault();
             document.getElementById('contact-success').classList.remove('hidden');
             e.target.reset();
         }
-
-        window.addEventListener('resize', () => {
-            if (document.getElementById('view-ekspor').classList.contains('active')) {
-                resizeAndDrawCanvas();
-            }
-        });
-
-        window.onload = function() {
-            updateSimTelemetry();
-            resizeAndDrawCanvas();
-        };
     </script>
 </body>
 </html>
